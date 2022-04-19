@@ -22,4 +22,3 @@ player:
 - player will die once health reaches 0 :D
 - player has 'mana' to prevent them from spamming cards
 - cards power will scale with player level
-
