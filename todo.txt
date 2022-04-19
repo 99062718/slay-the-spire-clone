@@ -1,0 +1,25 @@
+item system:
+- add more items to common / uncommon
+- allow for more types of cards like lifesteal, reshuffle deck, find card in deck, aoi, ect
+- allow for cards that can have multiple buffs and debuffs (useful for lunars)
+- add and remove items when used
+room system:
+- every room the player gets the choice between multiple what room theyre moving to next
+- these doors to the next rooms all have a preview of what is to come (the theme of the room, shop or not, guarenteed item, ect)
+- every room has a theme and each theme has its own set of enemies
+inventory system:
+- players can hold a certain amount of cards in their deck (usable cards during battle)
+- cards gained will be moved to a bag when chosen to not be used in deck
+- cards can be sold to be used to buy things in the shop
+difficulty system:
+- buff and debuff system the player can choose to make the game easier or harder for themselves
+- some of those could be unlocked by doing certain things during runs
+- difficulty scales with rooms scaled
+- some room themes will be harder on average than the other
+story/endless mode:
+- players can choose between playing the story mode (which has an ending and a final boss) or the endless mode (which i dont think i hate to explain)
+player:
+- player will die once health reaches 0 :D
+- player has 'mana' to prevent them from spamming cards
+- cards power will scale with player level
+
