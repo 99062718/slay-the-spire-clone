@@ -1,3 +1,4 @@
+#include "enemy.h"
 #include "globals.h"
 #include <iostream>
 
