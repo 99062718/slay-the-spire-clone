@@ -17,3 +17,5 @@ struct monsterTemplate{
     int str_health;
     int str_mana = 0;
 };
+
+extern std::vector<monsterTemplate> allMonsters;
