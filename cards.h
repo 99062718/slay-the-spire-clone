@@ -1,17 +1,22 @@
 #pragma once
 #include <string>
 
-struct card{
+struct cardEffect{
+    std::string AOIeffect;
     std::string type;
-    std::string name;
-    std::string rarity;
     int dmg = 0;
 };
 
+struct card{
+    std::string name;
+    std::string rarity;
+    cardEffect effects[5];
+};
+
 card common[3] = {
-    {"atk", "Sword slash", "common", 5},
-    {"atk", "Jump kick", "common", 2},
-    {"atk", "Chin punch", "common", 3}
+    {"Sword slash", "common", {{"single", "atk", 5}}},
+    {"Jump kick", "common", {{"single", "atk", 2}}},
+    {"Chin punch", "common", {{"single", "atk", 3}}}
 };
 
 card uncommon[1] = {
