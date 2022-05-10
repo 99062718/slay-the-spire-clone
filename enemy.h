@@ -13,10 +13,12 @@ public:
 };
 
 struct monsterTemplate{
-    std::string str_name;
-    std::string str_desc;
-    int str_health;
-    int str_mana = 0;
+    std::string name;
+    std::string desc;
+    int health;
+    int mana = 0;
 };
 
-extern std::vector<monsterTemplate> allMonsters;
+monsterTemplate allMonsters[1] = {
+    {"Skeleton", "The skeleton appears", 20, 3}
+};
