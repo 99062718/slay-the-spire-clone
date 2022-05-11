@@ -1,17 +1,14 @@
 #pragma once
 #include "cards.h"
+#include "entity.h"
 #include <string>
 #include <array>
 
-class enemy{
-    std::string ch_type;
-    int ch_id;
-    int ch_health;
-    int ch_mana;
+class enemy : entity{
     std::array<card, 10> ch_enemyCards;
 public:
-    enemy(std::string type, int id, int health, int mana, std::array<card, 10> enemyCards)
-        : ch_type(type), ch_id(id), ch_health(health), ch_mana(mana), ch_enemyCards(enemyCards){}
+    enemy(std::string type, int health, int mana, std::array<card, 10> enemyCards)
+        : entity(type, health, mana), ch_enemyCards(enemyCards){}
 };
 
 struct monsterTemplate{
