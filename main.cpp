@@ -3,7 +3,9 @@
 #include <iostream>
 
 int main(){
-    std::cout << allMonsters[0].name;
+    enemy monster(allMonsters[0].name, allMonsters[0].health, allMonsters[0].mana, allMonsters[0].enemyCards, 5);
+
+    monster.takeDamage(4);
 
     return 0;
 }

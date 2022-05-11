@@ -9,7 +9,7 @@ protected:
     int ch_mana;
     int ch_block;
 public:
-    entity(std::string type, int health, int mana, int block = 0)
+    entity(std::string type, int health, int mana, int block)
         : ch_type(type), ch_health(health), ch_mana(mana), ch_block(block){ch_maxHealth = ch_health;}
 
     void takeDamage(int dmg, bool ignoreBlock = false){

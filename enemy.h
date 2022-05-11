@@ -4,11 +4,11 @@
 #include <string>
 #include <array>
 
-class enemy : entity{
+class enemy : public entity{
     std::array<card, 10> ch_enemyCards;
 public:
-    enemy(std::string type, int health, int mana, std::array<card, 10> enemyCards)
-        : entity(type, health, mana), ch_enemyCards(enemyCards){}
+    enemy(std::string type, int health, int mana, std::array<card, 10> enemyCards, int block = 0)
+        : entity(type, health, mana, block), ch_enemyCards(enemyCards){}
 };
 
 struct monsterTemplate{
@@ -16,7 +16,7 @@ struct monsterTemplate{
     std::string desc;
     int health;
     int mana;
-    std::array<card, 10> ch_enemyCards;
+    std::array<card, 10> enemyCards;
 };
 
 monsterTemplate allMonsters[1] = {
