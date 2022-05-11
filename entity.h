@@ -8,9 +8,10 @@ protected:
     int ch_maxHealth;
     int ch_mana;
     int ch_block;
+    std::string ch_team;
 public:
-    entity(std::string type, int health, int mana, int block)
-        : ch_type(type), ch_health(health), ch_mana(mana), ch_block(block){ch_maxHealth = ch_health;}
+    entity(std::string type, int health, int mana, int block, std::string team)
+        : ch_type(type), ch_health(health), ch_mana(mana), ch_block(block), ch_team(team){ch_maxHealth = ch_health;}
 
     void takeDamage(int dmg, bool ignoreBlock = false){
         if (ignoreBlock){

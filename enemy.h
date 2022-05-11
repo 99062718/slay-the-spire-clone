@@ -8,7 +8,7 @@ class enemy : public entity{
     std::array<card, 10> ch_enemyCards;
 public:
     enemy(std::string type, int health, int mana, std::array<card, 10> enemyCards, int block = 0)
-        : entity(type, health, mana, block), ch_enemyCards(enemyCards){}
+        : entity(type, health, mana, block, "enemy"), ch_enemyCards(enemyCards){}
 };
 
 struct monsterTemplate{
