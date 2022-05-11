@@ -20,4 +20,8 @@ public:
             ch_health -= (totalDamage < 1) ? 0 : totalDamage;
         }
     }
+
+    void heal(int toHeal){
+        ch_health = ((ch_health + toHeal) > ch_maxHealth) ? ch_maxHealth : ch_health + toHeal;
+    }
 };
