@@ -4,13 +4,7 @@
 #include <array>
 
 std::array<int, 2> getAOIsize(std::string AOIeffect, int id, int teamSize){
-    if (AOIeffect == "single"){
-        return {id, id};
-    } else if (AOIeffect == "all"){
-        return {0, teamSize};
-    } else{
-        return {id, teamSize};
-    }
+    return {(AOIeffect == "all") ? 0 : id, (AOIeffect == "single") ? id : teamSize};
 }
 
 void activateCard(card currentCard, std::string team, int teamId, int teamSize){

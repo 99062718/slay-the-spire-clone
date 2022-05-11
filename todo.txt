@@ -1,6 +1,6 @@
 item system:
 - add more items to common / uncommon
-- allow for more types of cards like lifesteal, reshuffle deck, find card in deck, aoi, ect
+- allow for more types of cards like lifesteal, reshuffle deck, find card in deck, ect
 - allow for cards that can have multiple buffs and debuffs (useful for lunars)
 - add and remove items when used
 room system:
