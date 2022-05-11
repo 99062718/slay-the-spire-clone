@@ -13,24 +13,24 @@ struct card{
     cardEffect effects[5];
 };
 
-card common[3] = {
+card common[] = {
     {"Sword slash", "common", {{"single", "atk", 5}}},
     {"Jump kick", "common", {{"single", "atk", 2}}},
     {"Chin punch", "common", {{"single", "atk", 3}}}
 };
 
-card uncommon[1] = {
+card uncommon[] = {
 
 };
 
-card legendary[1] = {
+card legendary[] = {
 
 };
 
-card boss[1] = {
+card boss[] = {
 
 };
 
-card lunar[1] = {
+card lunar[] = {
 
 };

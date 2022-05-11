@@ -19,6 +19,6 @@ struct monsterTemplate{
     std::array<card, 10> enemyCards;
 };
 
-monsterTemplate allMonsters[1] = {
+monsterTemplate allMonsters[] = {
     {"Skeleton", "The skeleton appears", 20, 3, {common[1]}}
 };

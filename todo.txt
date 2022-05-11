@@ -1,7 +1,6 @@
 item system:
 - add more items to common / uncommon
 - allow for more types of cards like lifesteal, reshuffle deck, find card in deck, ect
-- allow for cards that can have multiple buffs and debuffs (useful for lunars)
 - add and remove items when used
 room system:
 - every room the player gets the choice between multiple what room theyre moving to next
@@ -20,7 +19,8 @@ story/endless mode:
 - players can choose between playing the story mode (which has an ending and a final boss) or the endless mode (which i dont think i hate to explain)
 player:
 - player will die once health reaches 0 :D
-- player has 'mana' to prevent them from spamming cards
 - cards power will scale with player level
 stats:
 - add defense and attack multiplier for scaling and different enemies
+
+very much subject to change as this list was made before i, very ironically, hadnt played slay the spire yet.
