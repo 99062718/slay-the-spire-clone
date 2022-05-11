@@ -1,6 +1,6 @@
 #pragma once
 #include "entity.h"
-#include "cards.h"
+#include "cards/cards.h"
 #include <vector>
 
 class player : public entity{
@@ -10,6 +10,6 @@ public:
         : entity(type, health, mana, block, "player"), ch_playerCards(playerCards){}
 };
 
-card startingDeck[] = {
+card startingDeck[1] = {
     // insert some starting decks here. Should 
 }

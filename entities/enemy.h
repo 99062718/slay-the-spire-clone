@@ -1,5 +1,5 @@
 #pragma once
-#include "cards.h"
+#include "cards/cards.h"
 #include "entity.h"
 #include <string>
 #include <array>
@@ -19,6 +19,6 @@ struct monsterTemplate{
     std::array<card, 10> enemyCards;
 };
 
-monsterTemplate allMonsters[] = {
+monsterTemplate allMonsters[1] = {
     {"Skeleton", "The skeleton appears", 20, 3, {common[1]}}
 };

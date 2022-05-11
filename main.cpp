@@ -1,5 +1,5 @@
-#include "enemy.h"
-#include "cards.h"
+#include "entities/enemy.h"
+#include "cards/cards.h"
 #include <iostream>
 
 int main(){
