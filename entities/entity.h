@@ -9,6 +9,7 @@ protected:
     int ch_mana;
     int ch_block;
     std::string ch_team;
+    int ch_strength = 0;
 public:
     entity(std::string type, int health, int mana, int block, std::string team)
         : ch_type(type), ch_health(health), ch_mana(mana), ch_block(block), ch_team(team){ch_maxHealth = ch_health;}
@@ -22,7 +23,8 @@ public:
         }
     }
 
-    void heal(int toHeal){
-        ch_health = ((ch_health + toHeal) > ch_maxHealth) ? ch_maxHealth : ch_health + toHeal;
-    }
+    void heal(int toHeal){ch_health = ((ch_health + toHeal) > ch_maxHealth) ? ch_maxHealth : ch_health + toHeal;}
+
+    void upStrength(int strength){ch_strength += strength;}
+    void downStrength(int strength){ch_strength -= strength;}
 };
