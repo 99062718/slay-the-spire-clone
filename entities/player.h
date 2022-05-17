@@ -6,10 +6,14 @@
 class player : public entity{
     std::vector<card> ch_playerCards;
 public:
-    player(std::string type, int health, int mana, std::vector<card> playerCards, int block = 0)
+    player(std::string type, int health, int mana, std::vector<card> playerCards, int block)
         : entity(type, health, mana, block, "player"), ch_playerCards(playerCards){}
 };
 
-card startingDeck[1] = {
-    // insert some starting decks here. Should 
-}
+struct playerData{
+    std::string type;
+    int health;
+    int mana;
+    std::vector<card> startingDeck;
+    int block = 0;
+};
