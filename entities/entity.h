@@ -9,10 +9,10 @@ protected:
     int ch_mana;
     int ch_block;
     std::string ch_team;
-    int ch_strength = 0;
+    int ch_strength;
 public:
-    entity(std::string type, int health, int mana, int block, std::string team)
-        : ch_type(type), ch_health(health), ch_mana(mana), ch_block(block), ch_team(team){ch_maxHealth = ch_health;}
+    entity(std::string type, int health, int mana, int block, std::string team, int strength)
+        : ch_type(type), ch_health(health), ch_mana(mana), ch_block(block), ch_team(team), ch_strength(strength){ch_maxHealth = ch_health;}
 
     void upBlock(int block){ch_block += block;}
     void downBlock(int block){ch_block = ((ch_block - block) < 0) ? 0 : ch_block - block;}

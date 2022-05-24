@@ -6,8 +6,8 @@
 class player : public entity{
     std::vector<card> ch_playerCards;
 public:
-    player(std::string type, int health, int mana, std::vector<card> playerCards, int block)
-        : entity(type, health, mana, block, "player"), ch_playerCards(playerCards){}
+    player(std::string type, int health, int mana, std::vector<card> playerCards, int block, int strength)
+        : entity(type, health, mana, block, "player", strength), ch_playerCards(playerCards){}
 };
 
 struct playerData{
@@ -16,4 +16,5 @@ struct playerData{
     int mana;
     std::vector<card> startingDeck;
     int block = 0;
+    int strength = 0;
 };

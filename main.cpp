@@ -3,7 +3,7 @@
 #include <iostream>
 
 int main(){
-    enemy monster(allMonsters[0].name, allMonsters[0].health, allMonsters[0].mana, allMonsters[0].enemyCards, 5);
+    enemy monster(allMonsters[0].name, allMonsters[0].health, allMonsters[0].mana, allMonsters[0].enemyCards, 5, 0);
 
     monster.takeDamage(4);
 
