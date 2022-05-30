@@ -14,7 +14,7 @@ void activateCard(int userId, card currentCard, char team, int teamId, int teamS
 
         for (int loopNum = loopSize[0]; loopNum < loopSize[1]; loopNum++){
             if (currentEffect.type == "atk"){
-                currentBattle.ch_combatants[team][loopNum]
+                currentBattle.ch_combatants[loopNum]
             }
         }
     }
