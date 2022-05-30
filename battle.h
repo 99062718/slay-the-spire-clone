@@ -6,9 +6,11 @@
 #include <vector>
 #include <variant>
 
+typedef std::array<boost::variant<ally, enemy>, 50> entityList;
+
 class battle{
 public:
-    std::array<boost::variant<ally, enemy>, 50> ch_combatants;
+    entityList ch_combatants;
 
     battle(std::vector<monsterTemplate> enemies, std::vector<allyData> allies){
         for (int loopNum = 0; loopNum < allies.size(); loopNum++){

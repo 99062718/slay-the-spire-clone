@@ -1,5 +1,5 @@
 #pragma once
-#include "cards/cards.h"
+#include "../cards/cards.h"
 #include "entity.h"
 #include <array>
 

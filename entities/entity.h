@@ -10,7 +10,7 @@ protected:
     int ch_block;
     std::string ch_team;
     int ch_strength;
-public:
+public:    
     entity(std::string type, int health, int mana, int block, std::string team, int strength)
         : ch_type(type), ch_health(health), ch_mana(mana), ch_block(block), ch_team(team), ch_strength(strength){ch_maxHealth = ch_health;}
 
@@ -31,4 +31,8 @@ public:
 
     void upStrength(int strength){ch_strength += strength;}
     void downStrength(int strength){ch_strength -= strength;}
+
+    std::string giveName(){
+        return ch_type;
+    }
 };

@@ -1,11 +1,14 @@
 #include "entities/enemy.h"
+#include "entities/entity.h"
 #include "cards/cards.h"
+#include "battle.h"
 #include <iostream>
+#include <boost/variant/get.hpp>
 
 int main(){
-    enemy monster(allMonsters[0].name, allMonsters[0].health, allMonsters[0].mana, allMonsters[0].enemyCards, 5, 0);
+    battle amogus({allMonsters[0]}, {{"mongus", 1, 1, {}, 0, 0}});
 
-    monster.takeDamage(4);
+    std::cout << boost::get<entity>(amogus.ch_combatants[0]).giveName() << std::endl;
 
     return 0;
 }
