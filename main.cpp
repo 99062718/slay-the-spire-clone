@@ -3,12 +3,13 @@
 #include "cards/cards.h"
 #include "battle.h"
 #include <iostream>
-#include <boost/variant/get.hpp>
 
 int main(){
-    battle amogus({allMonsters[0]}, {{"mongus", 1, 1, {}, 0, 0}});
+    battle test({allMonsters[0]}, {{"test", 1, 1, {common[1]}, 0, 0}});
 
-    std::cout << boost::get<entity>(amogus.ch_combatants[0]).giveName() << std::endl;
+    entity testee = *test.ch_combatants[0];
+
+    std::cout << testee.giveName() << std::endl;
 
     return 0;
 }
