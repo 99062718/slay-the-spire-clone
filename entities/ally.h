@@ -4,10 +4,9 @@
 #include <vector>
 
 class ally : public entity{
-    std::vector<card> ch_allyCards;
 public:
-    ally(std::string type, int health, int mana, std::vector<card> allyCards, int block, int strength)
-        : entity(type, health, mana, block, "ally", strength), ch_allyCards(allyCards){}
+    ally(std::string type, int health, std::vector<card> cards, int mana, int block, int strength)
+        : entity(type, health, cards, mana, block, "ally", strength){}
 };
 
 struct allyData{

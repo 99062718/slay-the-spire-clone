@@ -1,13 +1,12 @@
 #pragma once
 #include "../cards/cards.h"
 #include "entity.h"
-#include <array>
+#include <vector>
 
 class enemy : public entity{
-    std::array<card, 10> ch_enemyCards;
 public:
-    enemy(std::string type, int health, int mana, std::array<card, 10> enemyCards, int block, int strength)
-        : entity(type, health, mana, block, "enemy", strength), ch_enemyCards(enemyCards){}
+    enemy(std::string type, int health, std::vector<card> cards, int mana, int block, int strength)
+        : entity(type, health, cards, mana, block, "enemy", strength){}
 };
 
 struct monsterTemplate{
@@ -15,7 +14,7 @@ struct monsterTemplate{
     std::string desc;
     int health;
     int mana;
-    std::array<card, 10> enemyCards;
+    std::vector<card> enemyCards;
     int block = 0;
     int strength = 0;
 };

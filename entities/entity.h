@@ -1,9 +1,12 @@
 #pragma once
+#include "../cards/cards.h"
 #include <string>
+#include <vector>
 
 class entity{
 protected:
     std::string ch_type;
+    std::vector<card> ch_cards;
     int ch_health;
     int ch_maxHealth;
     int ch_mana;
@@ -11,8 +14,8 @@ protected:
     std::string ch_team;
     int ch_strength;
 public:    
-    entity(std::string type, int health, int mana, int block, std::string team, int strength)
-        : ch_type(type), ch_health(health), ch_mana(mana), ch_block(block), ch_team(team), ch_strength(strength){ch_maxHealth = ch_health;}
+    entity(std::string type, int health, std::vector<card> cards, int mana, int block, std::string team, int strength)
+        : ch_type(type), ch_health(health), ch_cards(cards), ch_mana(mana), ch_block(block), ch_team(team), ch_strength(strength){ch_maxHealth = ch_health;}
 
     void upBlock(int block){ch_block += block;}
     void downBlock(int block){ch_block = ((ch_block - block) < 0) ? 0 : ch_block - block;}
