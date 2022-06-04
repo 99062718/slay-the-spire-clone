@@ -3,12 +3,6 @@
 #include "entity.h"
 #include <vector>
 
-class enemy : public entity{
-public:
-    enemy(monsterTemplate data)
-        : entity(data.type, data.health, data.cards, data.mana, data.block, "enemy", data.strength){}
-};
-
 struct monsterTemplate{
     std::string type;
     std::string desc;
@@ -17,6 +11,12 @@ struct monsterTemplate{
     std::vector<card> cards;
     int block = 0;
     int strength = 0;
+};
+
+class enemy : public entity{
+public:
+    enemy(monsterTemplate data)
+        : entity(data.type, data.health, data.cards, data.mana, data.block, "enemy", data.strength){}
 };
 
 monsterTemplate allMonsters[1] = {
