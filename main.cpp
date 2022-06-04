@@ -7,9 +7,7 @@
 int main(){
     battle test({allMonsters[0]}, {{"test", 1, 1, {common[1]}, 0, 0}});
 
-    entity testee = *test.ch_combatants[0];
-
-    std::cout << testee.giveName() << std::endl;
+    std::cout << test.ch_combatants[0]->giveName() << std::endl;
 
     return 0;
 }
