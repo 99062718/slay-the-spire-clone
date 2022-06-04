@@ -5,15 +5,15 @@
 
 class ally : public entity{
 public:
-    ally(std::string type, int health, std::vector<card> cards, int mana, int block, int strength)
-        : entity(type, health, cards, mana, block, "ally", strength){}
+    ally(allyData data)
+        : entity(data.type, data.health, data.cards, data.mana, data.block, "ally", data.strength){}
 };
 
 struct allyData{
     std::string type;
     int health;
     int mana;
-    std::vector<card> startingDeck;
+    std::vector<card> cards;
     int block = 0;
     int strength = 0;
 };

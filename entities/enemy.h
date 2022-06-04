@@ -5,16 +5,16 @@
 
 class enemy : public entity{
 public:
-    enemy(std::string type, int health, std::vector<card> cards, int mana, int block, int strength)
-        : entity(type, health, cards, mana, block, "enemy", strength){}
+    enemy(monsterTemplate data)
+        : entity(data.type, data.health, data.cards, data.mana, data.block, "enemy", data.strength){}
 };
 
 struct monsterTemplate{
-    std::string name;
+    std::string type;
     std::string desc;
     int health;
     int mana;
-    std::vector<card> enemyCards;
+    std::vector<card> cards;
     int block = 0;
     int strength = 0;
 };
