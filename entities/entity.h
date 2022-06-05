@@ -48,4 +48,6 @@ public:
     std::string giveName(){
         return ch_type;
     }
+
+    virtual void ai(){}
 };

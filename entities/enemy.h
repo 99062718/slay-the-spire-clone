@@ -5,6 +5,8 @@ class enemy : public entity{
 public:
     enemy(entityData data)
         : entity(data, "enemy"){}
+
+    void ai(){}
 };
 
 entityData allMonsters[1] = {

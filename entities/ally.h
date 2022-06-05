@@ -5,4 +5,6 @@ class ally : public entity{
 public:
     ally(entityData data)
         : entity(data, "ally"){}
+
+    void ai(){}
 };
