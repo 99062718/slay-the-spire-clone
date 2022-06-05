@@ -3,17 +3,8 @@
 #include "../cards/cards.h"
 #include <vector>
 
-struct allyData{
-    std::string type;
-    int health;
-    int mana;
-    std::vector<card> cards;
-    int block = 0;
-    int strength = 0;
-};
-
 class ally : public entity{
 public:
-    ally(allyData data)
-        : entity(data.type, data.health, data.cards, data.mana, data.block, "ally", data.strength){}
+    ally(entityData data)
+        : entity(data, "ally"){}
 };

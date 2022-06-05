@@ -3,6 +3,16 @@
 #include <string>
 #include <vector>
 
+struct entityData{
+    std::string type;
+    std::string desc;
+    int health;
+    int mana;
+    std::vector<card> cards;
+    int block = 0;
+    int strength = 0;
+};
+
 class entity{
 protected:
     std::string ch_type;
@@ -14,8 +24,8 @@ protected:
     std::string ch_team;
     int ch_strength;
 public:    
-    entity(std::string type, int health, std::vector<card> cards, int mana, int block, std::string team, int strength)
-        : ch_type(type), ch_health(health), ch_cards(cards), ch_mana(mana), ch_block(block), ch_team(team), ch_strength(strength){ch_maxHealth = ch_health;}
+    entity(entityData data, std::string team)
+        : ch_type(data.type), ch_health(data.health), ch_cards(data.cards), ch_mana(data.mana), ch_block(data.block), ch_strength(data.strength), ch_team(team){ch_maxHealth = ch_health;}
 
     void upBlock(int block){ch_block += block;}
     void downBlock(int block){ch_block = ((ch_block - block) < 0) ? 0 : ch_block - block;}
