@@ -1,5 +1,3 @@
-#include "entities/enemy.h"
-#include "entities/entity.h"
 #include "cards/cards.h"
 #include "battle.h"
 #include <iostream>

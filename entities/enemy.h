@@ -1,7 +1,5 @@
 #pragma once
-#include "../cards/cards.h"
 #include "entity.h"
-#include <vector>
 
 class enemy : public entity{
 public:
