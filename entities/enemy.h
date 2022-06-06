@@ -1,12 +1,13 @@
 #pragma once
 #include "entity.h"
+#include <iostream>
 
 class enemy : public entity{
 public:
     enemy(entityData data)
         : entity(data, "enemy"){}
 
-    void ai(){}
+    void ai(){std::cout << "goodbye goodbye" << std::endl;}
 };
 
 entityData allMonsters[1] = {
