@@ -22,7 +22,5 @@ player:
 - cards power will scale with player level
 stats:
 - add defense and attack multiplier for scaling and different enemies
-entity:
-- create ai method and override for both ally and enemy
 
 very much subject to change as this list was made before i, very ironically, hadnt played slay the spire yet.

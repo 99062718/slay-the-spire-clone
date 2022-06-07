@@ -5,6 +5,7 @@ struct cardEffect{
     std::string AOIeffect;
     std::string type;
     int value = 0;
+    bool target = 0;
 };
 
 struct card{
