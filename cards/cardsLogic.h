@@ -22,10 +22,13 @@ void activateCard(int userId, card currentCard, std::string team, int teamId, ba
         std::array<int, 2> loopSize = getAOIsize(currentEffect.AOIeffect, teamId, teamSize);
 
         for (int loopNum = loopSize[0]; loopNum < loopSize[1]; loopNum++){
-            if (currentEffect.type == "atk"){
-                currentBattle.ch_combatants[loopNum]->takeDamage(currentEffect.value);
-            } else if (currentEffect.type == "heal"){
-                currentBattle.ch_combatants[loopNum]->heal(currentEffect.value);
+            switch (currentEffect.type){
+                case 0: 
+                    currentBattle.ch_combatants[loopNum]->takeDamage(currentEffect.value);
+                    break;
+                case 1:
+                    currentBattle.ch_combatants[loopNum]->heal(currentEffect.value);
+                    break;
             }
         }
     }

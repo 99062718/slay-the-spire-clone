@@ -1,9 +1,15 @@
 #pragma once
 #include <string>
 
+/*
+Card effects corrosponding to their number:
+    0: attack
+    1: heal
+*/
+
 struct cardEffect{
     std::string AOIeffect;
-    std::string type;
+    char type;
     int value = 0;
     bool target = 0;
 };
@@ -15,9 +21,9 @@ struct card{
 };
 
 card common[3] = {
-    {"Sword slash", "common", {{"single", "atk", 5}}},
-    {"Jump kick", "common", {{"single", "atk", 2}}},
-    {"Chin punch", "common", {{"single", "atk", 3}}}
+    {"Sword slash", "common", {{"single", 0, 5}}},
+    {"Jump kick", "common", {{"single", 0, 2}}},
+    {"Chin punch", "common", {{"single", 0, 3}}}
 };
 
 card uncommon[1] = {
