@@ -4,8 +4,8 @@
 
 class ally : public entity{
 public:
-    ally(entityData data)
-        : entity(data, "ally"){}
+    ally(entityData data, char entityId)
+        : entity(data, entityId){}
 
     void ai(){std::cout << "hello hello" << std::endl;}
 };

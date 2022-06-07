@@ -12,12 +12,12 @@ public:
         : ch_combatants(){
         for (int loopNum = 0; loopNum < allies.size(); loopNum++){
             entityData currentAlly = allies[loopNum];
-            ch_combatants[loopNum] = new ally(currentAlly);
+            ch_combatants[loopNum] = new ally(currentAlly, loopNum);
         }
 
         for (int loopNum = 0; loopNum < enemies.size(); loopNum++){
             entityData currentEnemy = enemies[loopNum];
-            ch_combatants[loopNum + 25] = new enemy(currentEnemy);
+            ch_combatants[loopNum + 25] = new enemy(currentEnemy, loopNum + 25);
         }
     }
 

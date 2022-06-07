@@ -22,11 +22,10 @@ protected:
     int ch_mana;
     int ch_block;
     int ch_strength;
+    char ch_entityId;
 public:    
-    std::string ch_team;
-    
-    entity(entityData data, std::string team)
-        : ch_type(data.type), ch_health(data.health), ch_cards(data.cards), ch_mana(data.mana), ch_block(data.block), ch_strength(data.strength), ch_team(team){ch_maxHealth = ch_health;}
+    entity(entityData data, char entityId)
+        : ch_type(data.type), ch_health(data.health), ch_cards(data.cards), ch_mana(data.mana), ch_block(data.block), ch_strength(data.strength), ch_entityId(entityId){ch_maxHealth = ch_health;}
 
     void upBlock(int block){ch_block += block;}
     void downBlock(int block){ch_block = ((ch_block - block) < 0) ? 0 : ch_block - block;}
