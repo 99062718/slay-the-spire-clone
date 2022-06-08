@@ -4,9 +4,12 @@
 #include "entities/entity.h"
 #include <vector>
 
+const char entityListSize = 20;
+char halfListSize = entityListSize/2;
+
 class battle{
 public:
-    entity* ch_combatants[50];
+    entity* ch_combatants[entityListSize];
 
     battle(std::vector<entityData> enemies, std::vector<entityData> allies)
         : ch_combatants(){
@@ -17,7 +20,7 @@ public:
 
         for (int loopNum = 0; loopNum < enemies.size(); loopNum++){
             entityData currentEnemy = enemies[loopNum];
-            ch_combatants[loopNum + 25] = new enemy(currentEnemy, loopNum + 25);
+            ch_combatants[loopNum + halfListSize] = new enemy(currentEnemy, loopNum + halfListSize);
         }
     }
 
@@ -37,11 +40,11 @@ public:
         while (ongoing){
             initTurn(idTurn);
 
-            idTurn += 25;
+            idTurn += halfListSize;
 
             initTurn(idTurn);
 
-            idTurn -= (idTurn == 49) ? 49 : 24;
+            idTurn -= (idTurn == entityListSize - 1) ? entityListSize - 1 : halfListSize - 1;
         }
     }
 };
