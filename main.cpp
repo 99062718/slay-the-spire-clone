@@ -7,7 +7,5 @@ int main(){
 
     std::cout << test.ch_combatants[0]->giveName() << std::endl;
 
-    test.ch_combatants[25]->ai();
-
     return 0;
 }
