@@ -26,4 +26,22 @@ public:
             delete currentEntity;
         }
     }
+
+    void initTurn(char id){
+        if (ch_combatants[id] != nullptr) ch_combatants[id]->ai();
+    }
+
+    void battleLoop(){
+        bool ongoing = 1;
+        char idTurn = 0;
+        while (ongoing){
+            initTurn(idTurn);
+
+            idTurn += 25;
+
+            initTurn(idTurn);
+
+            idTurn -= (idTurn == 49) ? 49 : 24;
+        }
+    }
 };
