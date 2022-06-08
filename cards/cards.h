@@ -21,24 +21,24 @@ struct card{
     float chanceToHit = 1.0;
 };
 
-card common[3] = {
+const card common[3] = {
     {"Sword slash", "common", {{"single", 0, 5}}},
     {"Jump kick", "common", {{"single", 0, 2}}},
     {"Chin punch", "common", {{"single", 0, 3}}}
 };
 
-card uncommon[1] = {
+const card uncommon[1] = {
 
 };
 
-card legendary[1] = {
+const card legendary[1] = {
 
 };
 
-card boss[1] = {
+const card boss[1] = {
 
 };
 
-card lunar[1] = {
+const card lunar[1] = {
 
 };

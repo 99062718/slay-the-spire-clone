@@ -10,6 +10,6 @@ public:
     void ai(){std::cout << "goodbye goodbye" << std::endl;}
 };
 
-entityData allMonsters[1] = {
+const entityData allMonsters[1] = {
     {"Skeleton", "The skeleton appears", 20, 3, {common[1]}}
 };

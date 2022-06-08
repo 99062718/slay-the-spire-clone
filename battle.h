@@ -5,7 +5,7 @@
 #include <vector>
 
 const char entityListSize = 20;
-char halfListSize = entityListSize/2;
+const char halfListSize = entityListSize/2;
 
 class battle{
 public:
