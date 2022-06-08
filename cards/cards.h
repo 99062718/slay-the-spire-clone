@@ -3,7 +3,7 @@
 
 /*
 Card effects corrosponding to their number:
-    0: attack
+    0: attack,
     1: heal
 */
 

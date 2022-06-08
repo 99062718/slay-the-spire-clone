@@ -9,9 +9,7 @@ std::array<int, 2> getAOIsize(std::string AOIeffect, int id, std::array<int, 2> 
 }
 
 std::array<int, 2> getTargetTeam(int id, bool target){
-    if (id >= 25){
-        target = !(target);
-    }
+    if (id >= 25) target = !(target);
     
     return {(target == 0) ? 0 : 25, (target == 0) ? 25 : 50};
 }
