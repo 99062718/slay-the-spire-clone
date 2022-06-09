@@ -5,10 +5,15 @@
 Card effects corrosponding to their number:
     0: attack,
     1: heal
+
+AOI effect modes corrosponding to their number:
+    0: all,
+    1: row,
+    2: single
 */
 
 struct cardEffect{
-    std::string AOIeffect;
+    char AOIeffect;
     char type;
     int value = 0;
     bool target = false;
@@ -22,9 +27,9 @@ struct card{
 };
 
 const card common[3] = {
-    {"Sword slash", "common", {{"single", 0, 5}}},
-    {"Jump kick", "common", {{"single", 0, 2}}},
-    {"Chin punch", "common", {{"single", 0, 3}}}
+    {"Sword slash", "common", {{2, 0, 5}}},
+    {"Jump kick", "common", {{2, 0, 2}}},
+    {"Chin punch", "common", {{2, 0, 3}}}
 };
 
 const card uncommon[1] = {

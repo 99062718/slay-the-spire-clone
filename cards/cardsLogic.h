@@ -1,13 +1,12 @@
 #pragma once
 #include "cards.h"
 #include "battle.h"
-#include <string>
 #include <array>
 #include <random>
 #include <ctime>
 
-std::array<char, 2> getAOIsize(std::string AOIeffect, char id, std::array<char, 2> teamSize){
-    return {(AOIeffect == "all") ? teamSize[0] : id + teamSize[0], (AOIeffect == "single") ? id + teamSize[0] : teamSize[1]};
+std::array<char, 2> getAOIsize(char AOIeffect, char id, std::array<char, 2> teamSize){
+    return {(AOIeffect == 0) ? teamSize[0] : id + teamSize[0], (AOIeffect == 2) ? id + teamSize[0] : teamSize[1]};
 }
 
 std::array<char, 2> getTargetTeam(char id, bool target){
