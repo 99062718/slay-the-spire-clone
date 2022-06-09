@@ -11,12 +11,12 @@ std::array<char, 2> getAOIsize(std::string AOIeffect, char id, std::array<char, 
 }
 
 std::array<char, 2> getTargetTeam(char id, bool target){
-    if (id >= 25) target = !(target);
+    if (id >= 25) target = !target;
     
     return {(target == 0) ? 0 : 25, (target == 0) ? 25 : 50};
 }
 
-void activateCard(char userId, card currentCard, char teamId, battle& currentBattle){
+void activateCard(char userId, card& currentCard, char teamId, battle& currentBattle){
     std::srand(std::time(0));
     if (currentCard.chanceToHit >= (float)std::rand()/RAND_MAX){
         for (cardEffect currentEffect : currentCard.effects){

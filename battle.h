@@ -13,12 +13,12 @@ public:
 
     battle(std::vector<entityData> enemies, std::vector<entityData> allies)
         : ch_combatants(){
-        for (int loopNum = 0; loopNum < allies.size(); loopNum++){
+        for (char loopNum = 0; loopNum < allies.size(); loopNum++){
             entityData currentAlly = allies[loopNum];
             ch_combatants[loopNum] = new ally(currentAlly, loopNum);
         }
 
-        for (int loopNum = 0; loopNum < enemies.size(); loopNum++){
+        for (char loopNum = 0; loopNum < enemies.size(); loopNum++){
             entityData currentEnemy = enemies[loopNum];
             ch_combatants[loopNum + halfListSize] = new enemy(currentEnemy, loopNum + halfListSize);
         }
@@ -35,7 +35,7 @@ public:
     }
 
     void battleLoop(){
-        bool ongoing = 1;
+        bool ongoing = true;
         char idTurn = 0;
         while (ongoing){
             initTurn(idTurn);

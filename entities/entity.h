@@ -14,7 +14,7 @@ struct entityData{
 };
 
 class entity{
-protected:
+private:
     std::string ch_type;
     std::vector<card> ch_cards;
     int ch_health;
@@ -24,8 +24,8 @@ protected:
     int ch_strength;
     char ch_entityId;
 public:    
-    entity(entityData data, char entityId)
-        : ch_type(data.type), ch_health(data.health), ch_cards(data.cards), ch_mana(data.mana), ch_block(data.block), ch_strength(data.strength), ch_entityId(entityId){ch_maxHealth = ch_health;}
+    entity(entityData& data, char entityId)
+        : ch_type(data.type), ch_cards(data.cards), ch_health(data.health), ch_mana(data.mana), ch_block(data.block), ch_strength(data.strength), ch_entityId(entityId){ch_maxHealth = ch_health;}
 
     void upBlock(int block){ch_block += block;}
     void downBlock(int block){ch_block = ((ch_block - block) < 0) ? 0 : ch_block - block;}

@@ -11,7 +11,7 @@ struct cardEffect{
     std::string AOIeffect;
     char type;
     int value = 0;
-    bool target = 0;
+    bool target = false;
 };
 
 struct card{

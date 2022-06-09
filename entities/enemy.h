@@ -4,7 +4,7 @@
 
 class enemy : public entity{
 public:
-    enemy(entityData data, char entityId)
+    enemy(entityData& data, char entityId)
         : entity(data, entityId){}
 
     void ai(){std::cout << "goodbye goodbye" << std::endl;}
