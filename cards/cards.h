@@ -23,7 +23,7 @@ struct card{
     std::string name;
     std::string rarity;
     cardEffect effects[5];
-    float chanceToHit = 1.0;
+    char chanceToHit = 100;
 };
 
 const card common[3] = {
