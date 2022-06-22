@@ -15,13 +15,9 @@ struct entityData{
 
 class entity{
 private:
-    std::string ch_type;
+    const std::string ch_type;
     std::vector<card> ch_cards;
-    int ch_health;
-    int ch_maxHealth;
-    int ch_mana;
-    int ch_block;
-    int ch_strength;
+    int ch_health, ch_maxHealth, ch_mana, ch_block, ch_strength;
     char ch_entityId;
 public:    
     entity(entityData& data, char entityId)
@@ -45,7 +41,7 @@ public:
     void upStrength(int strength){ch_strength += strength;}
     void downStrength(int strength){ch_strength -= strength;}
 
-    std::string giveName(){
+    std::string giveName() const {
         return ch_type;
     }
 
