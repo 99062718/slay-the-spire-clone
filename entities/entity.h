@@ -49,5 +49,5 @@ public:
         return ch_type;
     }
 
-    virtual void ai(){}
+    virtual void ai() = 0;
 };
