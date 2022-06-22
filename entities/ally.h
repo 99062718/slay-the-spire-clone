@@ -7,5 +7,5 @@ public:
     ally(entityData& data, char entityId)
         : entity(data, entityId){}
 
-    void ai(){std::cout << "hello hello" << std::endl;}
+    void ai() override {std::cout << "hello hello" << std::endl;}
 };
