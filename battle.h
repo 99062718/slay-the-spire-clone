@@ -4,39 +4,42 @@
 #include "entities/entity.h"
 #include <vector>
 
-const char entityListSize = 20;
-const char halfListSize = entityListSize/2;
+const int entityListSize = 20;
+const int halfListSize = entityListSize/2;
 
 class battle{
 public:
-    entity* ch_combatants[entityListSize];
+    entity* combatants[entityListSize];
+    std::string entityNames[entityListSize];
 
     battle(std::vector<entityData> enemies, std::vector<entityData> allies)
-        : ch_combatants(){
-        for (char loopNum = 0; loopNum < allies.size(); loopNum++){
+        : combatants(){
+        for (int loopNum = 0; loopNum < allies.size(); loopNum++){
             entityData currentAlly = allies[loopNum];
-            ch_combatants[loopNum] = new ally(currentAlly, loopNum);
+            combatants[loopNum] = new ally(currentAlly, loopNum);
+            entityNames[loopNum] = currentAlly.type;
         }
 
-        for (char loopNum = 0; loopNum < enemies.size(); loopNum++){
+        for (int loopNum = 0; loopNum < enemies.size(); loopNum++){
             entityData currentEnemy = enemies[loopNum];
-            ch_combatants[loopNum + halfListSize] = new enemy(currentEnemy, loopNum + halfListSize);
+            combatants[loopNum + halfListSize] = new enemy(currentEnemy, loopNum + halfListSize);
+            entityNames[loopNum + halfListSize] = currentEnemy.type;
         }
     }
 
     ~battle(){
-        for (entity* currentEntity : ch_combatants){
+        for (entity* currentEntity : combatants){
             delete currentEntity;
         }
     }
 
-    void initTurn(char id){
-        if (ch_combatants[id] != nullptr) ch_combatants[id]->ai();
+    void initTurn(int id){
+        if (combatants[id] != nullptr) combatants[id]->ai();
     }
 
     void battleLoop(){
         bool ongoing = true;
-        char idTurn = 0;
+        int idTurn = 0;
         while (ongoing){
             initTurn(idTurn);
 

@@ -4,37 +4,40 @@
 #include <array>
 #include <random>
 #include <functional>
+#include <iostream>
 
 std::default_random_engine hitChanceGen;
 std::uniform_int_distribution hitChanceDistrubution(1, 100);
 auto hitChance = std::bind(hitChanceDistrubution, hitChanceGen);
 
-std::array<char, 2> getAOIsize(char AOIeffect, char id, std::array<char, 2> teamSize){
+std::array<int, 2> getAOIsize(int AOIeffect, int id, std::array<int, 2> teamSize){
     return {(AOIeffect == 0) ? teamSize[0] : id + teamSize[0], (AOIeffect == 2) ? id + teamSize[0] : teamSize[1]};
 }
 
-std::array<char, 2> getTargetTeam(char id, bool target){
+std::array<int, 2> getTargetTeam(int id, bool target){
     if (id >= 25) target = !target;
     
-    return {(target == 0) ? 0 : 25, (target == 0) ? 25 : 50};
+    return {(target == 0) ? 0 : 10, (target == 0) ? 10 : 20};
 }
 
-void activateCard(char userId, card& currentCard, char teamId, battle& currentBattle){
+void activateCard(int userId, card& currentCard, int teamId, battle& currentBattle){
     if (currentCard.chanceToHit >= hitChance()){
         for (cardEffect currentEffect : currentCard.effects){
-            std::array<char, 2> teamSize = getTargetTeam(userId, currentEffect.target);
-            std::array<char, 2> loopSize = getAOIsize(currentEffect.AOIeffect, teamId, teamSize);
+            std::array<int, 2> teamSize = getTargetTeam(userId, currentEffect.target);
+            std::array<int, 2> loopSize = getAOIsize(currentEffect.AOIeffect, teamId, teamSize);
 
-            for (char loopNum = loopSize[0]; loopNum < loopSize[1]; loopNum++){
+            for (int loopNum = loopSize[0]; loopNum < loopSize[1]; loopNum++){
                 switch (currentEffect.type){
                     case 0: 
-                        currentBattle.ch_combatants[loopNum]->takeDamage(currentEffect.value);
+                        currentBattle.combatants[loopNum]->takeDamage(currentEffect.value);
                         break;
                     case 1:
-                        currentBattle.ch_combatants[loopNum]->heal(currentEffect.value);
+                        currentBattle.combatants[loopNum]->heal(currentEffect.value);
                         break;
                 }
             }
         }
+    } else {
+        std::cout << currentCard.name << " has missed!" << std::endl;
     }
 }

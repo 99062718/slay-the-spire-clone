@@ -14,13 +14,13 @@ struct entityData{
 };
 
 class entity{
-private:
+protected:
     const std::string ch_type;
     std::vector<card> ch_cards;
     int ch_health, ch_maxHealth, ch_mana, ch_block, ch_strength;
-    char ch_entityId;
+    int ch_entityId;
 public:    
-    entity(entityData& data, char entityId)
+    entity(entityData& data, int entityId)
         : ch_type(data.type), ch_cards(data.cards), ch_health(data.health), ch_mana(data.mana), ch_block(data.block), ch_strength(data.strength), ch_entityId(entityId){ch_maxHealth = ch_health;}
 
     void upBlock(int block){ch_block += block;}
@@ -43,6 +43,16 @@ public:
 
     std::string giveName() const {
         return ch_type;
+    }
+
+    std::vector<std::string> giveCardNames(){
+        std::vector<std::string> cardNames;
+        
+        for(int x = 0; x < ch_cards.size(); x++){
+            cardNames.push_back(ch_cards[x].name);
+        }
+
+        return cardNames;
     }
 
     virtual void ai() = 0;

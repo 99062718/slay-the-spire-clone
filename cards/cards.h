@@ -13,8 +13,8 @@ AOI effect modes corrosponding to their number:
 */
 
 struct cardEffect{
-    char AOIeffect;
-    char type;
+    int AOIeffect;
+    int type;
     int value = 0;
     bool target = false;
 };
@@ -23,7 +23,7 @@ struct card{
     std::string name;
     std::string rarity;
     cardEffect effects[5];
-    char chanceToHit = 100;
+    int chanceToHit = 100;
 };
 
 const card common[3] = {
