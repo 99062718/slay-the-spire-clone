@@ -25,6 +25,8 @@ public:
             combatants[loopNum + halfListSize] = new enemy(currentEnemy, loopNum + halfListSize);
             entityNames[loopNum + halfListSize] = currentEnemy.type;
         }
+
+        battleLoop();
     }
 
     ~battle(){
@@ -34,7 +36,7 @@ public:
     }
 
     void initTurn(int id){
-        if (combatants[id] != nullptr) combatants[id]->ai();
+        if (combatants[id] != nullptr) combatants[id]->ai(entityNames);
     }
 
     void battleLoop(){

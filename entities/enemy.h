@@ -7,7 +7,7 @@ public:
     enemy(entityData& data, int entityId)
         : entity(data, entityId){}
 
-    void ai() override {std::cout << "goodbye goodbye" << std::endl;}
+    void ai(std::string (&entityList)[]) override {std::cout << "goodbye goodbye" << std::endl;}
 };
 
 const entityData allMonsters[1] = {

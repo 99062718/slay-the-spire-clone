@@ -8,11 +8,13 @@ public:
     ally(entityData& data, int entityId)
         : entity(data, entityId){}
 
-    void ai() override {
+    void ai(std::string (&entityList)[]) override {
         std::vector<std::string> cardNames = giveCardNames();
         
         std::cout << ch_type << "'s turn" << std::endl;
 
-        int chosen = playerChoice(cardNames);
+        int chosenCard = playerChoiceVector(cardNames);
+
+        int chosenEntity = playerChoiceArray(entityList);
     }
 };
