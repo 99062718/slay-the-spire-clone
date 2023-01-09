@@ -19,7 +19,7 @@ int playerChoiceVector(std::vector<std::string>& choiceList){
         chosen = playerChoiceVector(choiceList);
     }
 
-    return chosen;
+    return chosen - 1;
 }
 
 int playerChoiceArray(std::string (&choiceList)[]){
@@ -41,5 +41,5 @@ int playerChoiceArray(std::string (&choiceList)[]){
         chosen = playerChoiceArray(choiceList);
     }
 
-    return chosen;
+    return chosen - 1;
 }
