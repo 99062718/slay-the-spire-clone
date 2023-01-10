@@ -1,6 +1,6 @@
 #pragma once
 #include "cards.h"
-#include "battle.h"
+#include "../general/battle.h"
 #include <array>
 #include <random>
 #include <functional>
@@ -15,29 +15,27 @@ std::array<int, 2> getAOIsize(int AOIeffect, int id, std::array<int, 2> teamSize
 }
 
 std::array<int, 2> getTargetTeam(int id, bool target){
-    if (id >= 25) target = !target;
+    if (id >= 10) target = !target;
     
     return {(target == 0) ? 0 : 10, (target == 0) ? 10 : 20};
 }
 
-void activateCard(int userId, card& currentCard, int teamId, battle& currentBattle){
-    if (currentCard.chanceToHit >= hitChance()){
-        for (cardEffect currentEffect : currentCard.effects){
-            std::array<int, 2> teamSize = getTargetTeam(userId, currentEffect.target);
-            std::array<int, 2> loopSize = getAOIsize(currentEffect.AOIeffect, teamId, teamSize);
+void activateCard(int userId, card& currentCard, int currentEffect, int teamId, battle& currentBattle){
+    if (currentCard.effects[currentEffect].chanceToHit >= hitChance()){
+        std::array<int, 2> teamSize = getTargetTeam(userId, currentCard.effects[currentEffect].target);
+        std::array<int, 2> loopSize = getAOIsize(currentCard.effects[currentEffect].AOIeffect, teamId, teamSize);
 
-            for (int loopNum = loopSize[0]; loopNum < loopSize[1]; loopNum++){
-                switch (currentEffect.type){
-                    case 0: 
-                        currentBattle.combatants[loopNum]->takeDamage(currentEffect.value);
-                        break;
-                    case 1:
-                        currentBattle.combatants[loopNum]->heal(currentEffect.value);
-                        break;
-                }
+        for (int loopNum = loopSize[0]; loopNum < loopSize[1]; loopNum++){
+            switch (currentCard.effects[currentEffect].type){
+                case 0: 
+                    currentBattle.combatants[loopNum]->takeDamage(currentCard.effects[currentEffect].value);
+                    break;
+                case 1:
+                    currentBattle.combatants[loopNum]->heal(currentCard.effects[currentEffect].value);
+                    break;
             }
         }
     } else {
-        std::cout << currentCard.name << " has missed!" << std::endl;
+        std::cout << currentCard.name << "'s " << cardTypeNames[currentCard.effects[currentEffect].type] << " has failed!" << std::endl;
     }
 }

@@ -1,5 +1,5 @@
 #include "cards/cards.h"
-#include "battle.h"
+#include "general/battle.h"
 #include <iostream>
 
 int main(){

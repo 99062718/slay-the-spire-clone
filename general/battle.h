@@ -1,7 +1,7 @@
 #pragma once
-#include "entities/enemy.h"
-#include "entities/ally.h"
-#include "entities/entity.h"
+#include "../entities/enemy.h"
+#include "../entities/ally.h"
+#include "../entities/entity.h"
 #include <vector>
 
 const int entityListSize = 20;

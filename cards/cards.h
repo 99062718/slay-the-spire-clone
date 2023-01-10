@@ -12,10 +12,13 @@ AOI effect modes corrosponding to their number:
     2: single
 */
 
+std::string cardTypeNames[2] = {"attack", "heal"};
+
 struct cardEffect{
     int AOIeffect;
     int type;
     int value = 0;
+    int chanceToHit = 100;
     bool target = false;
 };
 
@@ -23,7 +26,6 @@ struct card{
     std::string name;
     std::string rarity;
     cardEffect effects[5];
-    int chanceToHit = 100;
 };
 
 const card common[3] = {
