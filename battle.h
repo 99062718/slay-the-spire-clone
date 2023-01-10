@@ -36,7 +36,7 @@ public:
     }
 
     void initTurn(int id){
-        if (combatants[id] != nullptr) combatants[id]->ai(entityNames);
+        if (combatants[id] != nullptr) combatants[id]->ai(entityNames, entityListSize);
     }
 
     void battleLoop(){

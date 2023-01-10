@@ -55,5 +55,5 @@ public:
         return cardNames;
     }
 
-    virtual void ai(std::string (&entityList)[]) = 0;
+    virtual void ai(std::string entityList[], int listSize) = 0;
 };

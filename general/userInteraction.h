@@ -23,14 +23,13 @@ int playerChoiceVector(std::vector<std::string>& choiceList){
     return chosen;
 }
 
-int playerChoiceArray(std::string &choiceList[entityListSize]){
+int playerChoiceArray(std::string choiceList[], int listSize, int startPoint){
     int chosen;
-    int listSize = choiceList->size();
     int num = 0;
 
-    for(int x = 0; x < listSize; x++){
+    for(int x = startPoint; x < listSize; x++){
         if (choiceList[x] != ""){
-            std::cout << num + 1 << ") " << choiceList[num] << std::endl;
+            std::cout << num + 1 << ") " << choiceList[x] << std::endl;
             num++;
         }
     }
@@ -40,7 +39,7 @@ int playerChoiceArray(std::string &choiceList[entityListSize]){
 
     if(chosen < 0 || chosen >= listSize){
         std::cout << chosen << " is not a valid choice";
-        chosen = playerChoiceArray(choiceList);
+        chosen = playerChoiceArray(choiceList, listSize, startPoint);
     }
 
     return chosen;
