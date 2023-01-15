@@ -16,7 +16,7 @@ void ally::ai(std::string entityList[], int listSize){
     int chosenCard = playerChoiceVector(cardNames);
 
 
-    for (cardEffect currentEffect : ch_cards[chosenCard].effects){ //currently loops through entire 5 sized list even if it only has 1 effect
+    for (cardEffect currentEffect : ch_cards[chosenCard].effects){
         std::array<int, 2> loopSize = getTargetTeam(ch_entityId, currentEffect.target);
 
         int chosenEntity = playerChoiceArray(entityList, loopSize[0], loopSize[1]);

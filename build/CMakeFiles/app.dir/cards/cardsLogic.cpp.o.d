@@ -95,16 +95,16 @@ CMakeFiles/app.dir/cards/cardsLogic.cpp.o: \
  /usr/include/linux/errno.h /usr/include/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/bits/types/error_t.h /usr/include/c++/12/bits/charconv.h \
- /usr/include/c++/12/bits/basic_string.tcc \
+ /usr/include/c++/12/bits/basic_string.tcc /usr/include/c++/12/vector \
+ /usr/include/c++/12/bits/stl_uninitialized.h \
+ /usr/include/c++/12/bits/stl_vector.h \
+ /usr/include/c++/12/bits/stl_bvector.h \
+ /usr/include/c++/12/bits/vector.tcc \
  /home/TheLennyGod/Documents/slay-the-spire-clone/cards/cardsLogic.h \
  /home/TheLennyGod/Documents/slay-the-spire-clone/cards/../general/battle.h \
  /home/TheLennyGod/Documents/slay-the-spire-clone/cards/../general/../entities/entities.h \
- /usr/include/c++/12/vector /usr/include/c++/12/bits/stl_uninitialized.h \
- /usr/include/c++/12/bits/stl_vector.h \
- /usr/include/c++/12/bits/stl_bvector.h \
- /usr/include/c++/12/bits/vector.tcc /usr/include/c++/12/array \
- /usr/include/c++/12/compare /usr/include/c++/12/random \
- /usr/include/c++/12/cmath /usr/include/math.h \
+ /usr/include/c++/12/array /usr/include/c++/12/compare \
+ /usr/include/c++/12/random /usr/include/c++/12/cmath /usr/include/math.h \
  /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
  /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
  /usr/include/bits/fp-fast.h \

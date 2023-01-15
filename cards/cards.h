@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <vector>
 
 /*
 Card effects corrosponding to their number:
@@ -25,7 +26,7 @@ struct cardEffect{
 struct card{
     std::string name;
     std::string rarity;
-    cardEffect effects[5];
+    std::vector<cardEffect> effects;
 };
 
 const card common[3] = {
