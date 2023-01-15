@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/app.dir/main.cpp.o CMakeFiles/app.dir/general/battle.cpp.o CMakeFiles/app.dir/entities/entity.cpp.o CMakeFiles/app.dir/entities/ally.cpp.o CMakeFiles/app.dir/entities/enemy.cpp.o CMakeFiles/app.dir/cards/cardsLogic.cpp.o -o app 

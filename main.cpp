@@ -1,5 +1,5 @@
-#include "cards/cards.h"
 #include "general/battle.h"
+#include "entities/entityData.h"
 #include <iostream>
 
 int main(){

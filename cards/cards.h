@@ -12,7 +12,7 @@ AOI effect modes corrosponding to their number:
     2: single
 */
 
-std::string cardTypeNames[2] = {"attack", "heal"};
+extern std::string cardTypeNames[2];
 
 struct cardEffect{
     int AOIeffect;
