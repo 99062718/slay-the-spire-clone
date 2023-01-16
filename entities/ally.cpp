@@ -1,4 +1,4 @@
-#include "entities.h"
+#include "entityData.h"
 #include "../cards/cardsLogic.h"
 #include "../general/userInteraction.h"
 #include <iostream>
@@ -8,7 +8,7 @@
 ally::ally(entityData& data, int entityId)
     : entity(data, entityId){}
 
-void ally::ai(std::string entityList[], int listSize){
+void ally::ai(battle& battleInstance, int listSize){
     std::vector<std::string> cardNames = giveCardNames();
         
     std::cout << ch_type << "'s turn" << std::endl;
@@ -18,6 +18,6 @@ void ally::ai(std::string entityList[], int listSize){
     for (cardEffect currentEffect : ch_cards[chosenCard].effects){
         std::array<int, 2> loopSize = getTargetTeam(ch_entityId, currentEffect.target);
 
-        int chosenEntity = playerChoiceArray(entityList, loopSize[0], loopSize[1]);
+        int chosenEntity = playerChoiceArray(battleInstance.entityNames, loopSize[0], loopSize[1]);
     }
 }

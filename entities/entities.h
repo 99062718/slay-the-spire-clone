@@ -1,18 +1,10 @@
 #pragma once
 #include "../cards/cards.h"
+#include "entityData.h"
 #include <string>
 #include <vector>
 
-struct entityData{
-    std::string type;
-    std::string desc;
-    int health;
-    int mana;
-    std::vector<card> cards;
-    int block = 0;
-    int strength = 0;
-};
-
+class battle;
 class entity{
 protected:
     const std::string ch_type;
@@ -36,19 +28,19 @@ public:
 
     std::vector<std::string> giveCardNames();
 
-    virtual void ai(std::string entityList[], int listSize) = 0;
+    virtual void ai(battle& battleInstance, int listSize) = 0;
 };
 
 class enemy : public entity{
 public:
     enemy(entityData& data, int entityId);
 
-    void ai(std::string entityList[], int listSize) override;
+    void ai(battle& battleInstance, int listSize) override;
 };
 
 class ally : public entity{
 public:
     ally(entityData& data, int entityId);
 
-    void ai(std::string entityList[], int listSize) override;
+    void ai(battle& battleInstance, int listSize) override;
 };
