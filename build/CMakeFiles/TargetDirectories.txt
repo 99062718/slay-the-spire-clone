@@ -1,3 +1,0 @@
-/home/TheLennyGod/Documents/slay-the-spire-clone/build/CMakeFiles/app.dir
-/home/TheLennyGod/Documents/slay-the-spire-clone/build/CMakeFiles/edit_cache.dir
-/home/TheLennyGod/Documents/slay-the-spire-clone/build/CMakeFiles/rebuild_cache.dir
