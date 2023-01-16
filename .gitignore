@@ -5,3 +5,4 @@ meson.build
 .vscode/settings.json
 .vscode/launch.json
 .vscode/tasks.json
+build/
