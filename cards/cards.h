@@ -5,7 +5,10 @@
 /*
 Card effects corrosponding to their number:
     0: attack,
-    1: heal
+    1: heal,
+    2: block,
+    3: fragile,
+    4: strength
 
 AOI effect modes corrosponding to their number:
     0: all,

@@ -5,7 +5,7 @@
 #include <functional>
 #include <iostream>
 
-std::string cardTypeNames[2] = {"attack", "heal"};
+std::string cardTypeNames[5] = {"attack", "heal", "block", "fragile", "strength"};
 std::default_random_engine hitChanceGen;
 std::uniform_int_distribution<> hitChanceDistrubution(1, 100);
 auto hitChance = std::bind(hitChanceDistrubution, hitChanceGen);
