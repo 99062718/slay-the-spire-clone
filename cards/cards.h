@@ -21,7 +21,7 @@ Display modes corrosponding to their number:
     2: show all
 */
 
-extern std::string cardTypeNames[5];
+extern std::string cardTypeNames[7];
 
 struct cardEffect{
     int AOIeffect;

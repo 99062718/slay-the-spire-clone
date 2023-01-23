@@ -23,3 +23,5 @@ player:
 - players with different playstyles?
 stats:
 - add defense and attack multiplier for scaling and different enemies
+cool tech stuff i want to try:
+- reading format in hexbytes for entity and card data(and try to encrypt it)

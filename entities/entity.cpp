@@ -22,15 +22,11 @@ void entity::heal(int toHeal){ch_health = ((ch_health + toHeal) > ch_maxHealth) 
 void entity::upStrength(int strength){ch_strength += strength;}
 void entity::downStrength(int strength){ch_strength -= strength;}
 
-std::string entity::giveName() const {
-    return ch_type;
-}
+std::string entity::giveName() const {return ch_type;}
+int entity::getHealth() const {return ch_health;}
+int entity::getMaxHealth() const {return ch_maxHealth;}
 
-int entity::getHealth() const {
-    return ch_health;
-}
-
-std::vector<std::string> entity::giveCardNames(){
+std::vector<std::string> entity::giveCardNames() const{
     std::vector<std::string> cardNames;
         
     for(int x = 0; x < ch_cards.size(); x++){

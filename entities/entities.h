@@ -26,8 +26,8 @@ public:
 
     std::string giveName() const;
     int getHealth() const;
-
-    std::vector<std::string> giveCardNames();
+    int getMaxHealth() const;
+    std::vector<std::string> giveCardNames() const;
 
     virtual void ai(battle& battleInstance, int listSize) = 0;
 };
