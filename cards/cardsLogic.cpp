@@ -22,7 +22,9 @@ std::array<int, 2> getTargetTeam(int id, bool target){
 
 void activateCard(int userId, card& currentCard, cardEffect& currentEffect, int teamId, std::array<int, 2> loopSize, battle& currentBattle){
     if (currentEffect.chanceToHit >= hitChance()){
-        for (int loopNum = loopSize[0]; loopNum < loopSize[1]; loopNum++){
+        std::array<int, 2> AOIsize = getAOIsize(currentEffect.AOIeffect, teamId, loopSize);
+
+        for (int loopNum = AOIsize[0]; loopNum < AOIsize[1]; loopNum++){
             if (currentBattle.combatants[loopNum] != nullptr){
                 switch (currentEffect.type){
                     case 0: 
