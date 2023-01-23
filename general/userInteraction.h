@@ -44,7 +44,7 @@ int entityChoiceList(battle& battleInstance, int start, int end, int displayMode
                     throw std::invalid_argument("displayMode of " + std::to_string(displayMode) + " is not possible");
             }
             std::cout << num + 1 << ") " << currentName << std::endl;
-            entityPositions.push_back(num);
+            entityPositions.push_back(x);
             num++;
         }
     }
