@@ -20,8 +20,6 @@ void ally::ai(battle& battleInstance, int listSize){
 
         int chosenEntity = playerChoiceArray(battleInstance.entityNames, loopSize[0], loopSize[1]);
 
-        std::cout << loopSize[0] << " " << loopSize[1];
-
         chosenEntity += loopSize[0];
 
         activateCard(ch_entityId, ch_cards[chosenCard], currentEffect, chosenEntity, loopSize, battleInstance);

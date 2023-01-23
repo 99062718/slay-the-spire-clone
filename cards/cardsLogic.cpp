@@ -23,13 +23,15 @@ std::array<int, 2> getTargetTeam(int id, bool target){
 void activateCard(int userId, card& currentCard, cardEffect& currentEffect, int teamId, std::array<int, 2> loopSize, battle& currentBattle){
     if (currentEffect.chanceToHit >= hitChance()){
         for (int loopNum = loopSize[0]; loopNum < loopSize[1]; loopNum++){
-            switch (currentEffect.type){
-                case 0: 
-                    currentBattle.combatants[loopNum]->takeDamage(currentEffect.value);
-                    break;
-                case 1:
-                    currentBattle.combatants[loopNum]->heal(currentEffect.value);
-                    break;
+            if (currentBattle.combatants[loopNum] != nullptr){
+                switch (currentEffect.type){
+                    case 0: 
+                        currentBattle.combatants[loopNum]->takeDamage(currentEffect.value);
+                        break;
+                    case 1:
+                        currentBattle.combatants[loopNum]->heal(currentEffect.value);
+                        break;
+                }
             }
         }
     } else {
