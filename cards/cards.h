@@ -21,6 +21,7 @@ struct cardEffect{
     int value = 0;
     int chanceToHit = 100;
     bool target = true;
+    bool ignoreDeath = false;
 };
 
 struct card{

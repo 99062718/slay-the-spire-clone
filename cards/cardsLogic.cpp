@@ -26,13 +26,19 @@ void activateCard(int userId, card& currentCard, cardEffect& currentEffect, int 
 
         for (int loopNum = AOIsize[0]; loopNum < AOIsize[1]; loopNum++){
             if (currentBattle.combatants[loopNum] != nullptr){
-                switch (currentEffect.type){
-                    case 0: 
-                        currentBattle.combatants[loopNum]->takeDamage(currentEffect.value);
-                        break;
-                    case 1:
-                        currentBattle.combatants[loopNum]->heal(currentEffect.value);
-                        break;
+                if (currentEffect.ignoreDeath){
+                    switch (currentEffect.type){
+                        // should have card effects that get played regardless of if entity is alive or not.
+                    }
+                } else if (currentBattle.combatants[loopNum]->getHealth() != 0){
+                    switch (currentEffect.type){
+                        case 0: 
+                            currentBattle.combatants[loopNum]->takeDamage(currentEffect.value);
+                            break;
+                        case 1:
+                            currentBattle.combatants[loopNum]->heal(currentEffect.value);
+                            break;
+                    }
                 }
             }
         }

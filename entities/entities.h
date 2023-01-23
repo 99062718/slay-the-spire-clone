@@ -25,6 +25,7 @@ public:
     void downStrength(int strength);
 
     std::string giveName() const;
+    int getHealth() const;
 
     std::vector<std::string> giveCardNames();
 

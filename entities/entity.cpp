@@ -26,6 +26,10 @@ std::string entity::giveName() const {
     return ch_type;
 }
 
+int entity::getHealth() const {
+    return ch_health;
+}
+
 std::vector<std::string> entity::giveCardNames(){
     std::vector<std::string> cardNames;
         
