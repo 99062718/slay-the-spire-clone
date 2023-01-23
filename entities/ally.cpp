@@ -18,7 +18,7 @@ void ally::ai(battle& battleInstance, int listSize){
     for (cardEffect currentEffect : ch_cards[chosenCard].effects){
         std::array<int, 2> loopSize = getTargetTeam(ch_entityId, currentEffect.target);
 
-        int chosenEntity = playerChoiceArray(battleInstance.entityNames, loopSize[0], loopSize[1]);
+        int chosenEntity = playerChoiceArray(battleInstance.entityNames, loopSize[0], loopSize[1]); //entities wont get correctly chosen if 1 is not on the list but 2 is. 2 will get shown as 1 and 1 will get affected instead of 2.
 
         chosenEntity += loopSize[0];
 

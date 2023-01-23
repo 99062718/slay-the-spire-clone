@@ -2,5 +2,3 @@
 wooooo roguelike
 
 challenge by teacher
-
-its pretty fun

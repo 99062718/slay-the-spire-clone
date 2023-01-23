@@ -42,6 +42,9 @@ void activateCard(int userId, card& currentCard, cardEffect& currentEffect, int 
                 if (currentEffect.ignoreDeath){
                     switch (currentEffect.type){
                         // should have card effects that get played regardless of if entity is alive or not.
+                        default:
+                            throw std::invalid_argument("cardEffect type of " + std::to_string(currentEffect.type) + " is not possible");
+                            break;
                     }
                 } else if (currentBattle.combatants[loopNum]->getHealth() != 0){
                     switch (currentEffect.type){
@@ -50,6 +53,18 @@ void activateCard(int userId, card& currentCard, cardEffect& currentEffect, int 
                             break;
                         case 1:
                             currentBattle.combatants[loopNum]->heal(currentEffect.value);
+                            break;
+                        case 2:
+                            currentBattle.combatants[loopNum]->upBlock(currentEffect.value);
+                            break;
+                        case 3:
+                            currentBattle.combatants[loopNum]->downBlock(currentEffect.value);
+                            break;
+                        case 4:
+                            currentBattle.combatants[loopNum]->upStrength(currentEffect.value);
+                            break;
+                        default:
+                            throw std::invalid_argument("cardEffect type of " + std::to_string(currentEffect.type) + " is not possible");
                             break;
                     }
                 }
