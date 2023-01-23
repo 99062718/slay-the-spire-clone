@@ -24,7 +24,7 @@ int playerChoiceVector(std::vector<std::string>& choiceList){
 }
 
 int playerChoiceArray(std::string choiceList[], int start, int end){
-    int chosen;
+    int chosen = 0;
     int num = 0;
 
     for(int x = start; x < end; x++){

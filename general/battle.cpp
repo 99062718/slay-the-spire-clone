@@ -18,7 +18,7 @@ battle::battle(std::vector<entityData> enemies, std::vector<entityData> allies)
 }
 
 void battle::initTurn(int id){
-    if (combatants[id] != nullptr) combatants[id]->ai(*(this), entityListSize);
+    if (combatants[id] != nullptr) combatants[id]->ai(*this, entityListSize);
 }
 
 void battle::battleLoop(){

@@ -20,22 +20,19 @@ std::array<int, 2> getTargetTeam(int id, bool target){
     return {(target == 0) ? 0 : 10, (target == 0) ? 10 : 20};
 }
 
-void activateCard(int userId, card& currentCard, int currentEffect, int teamId, battle& currentBattle){
-    if (currentCard.effects[currentEffect].chanceToHit >= hitChance()){
-        std::array<int, 2> teamSize = getTargetTeam(userId, currentCard.effects[currentEffect].target);
-        std::array<int, 2> loopSize = getAOIsize(currentCard.effects[currentEffect].AOIeffect, teamId, teamSize);
-
+void activateCard(int userId, card& currentCard, cardEffect& currentEffect, int teamId, std::array<int, 2> loopSize, battle& currentBattle){
+    if (currentEffect.chanceToHit >= hitChance()){
         for (int loopNum = loopSize[0]; loopNum < loopSize[1]; loopNum++){
-            switch (currentCard.effects[currentEffect].type){
+            switch (currentEffect.type){
                 case 0: 
-                    currentBattle.combatants[loopNum]->takeDamage(currentCard.effects[currentEffect].value);
+                    currentBattle.combatants[loopNum]->takeDamage(currentEffect.value);
                     break;
                 case 1:
-                    currentBattle.combatants[loopNum]->heal(currentCard.effects[currentEffect].value);
+                    currentBattle.combatants[loopNum]->heal(currentEffect.value);
                     break;
             }
         }
     } else {
-        std::cout << currentCard.name << "'s " << cardTypeNames[currentCard.effects[currentEffect].type] << " has failed!" << std::endl;
+        std::cout << currentCard.name << "'s " << cardTypeNames[currentEffect.type] << " has failed!" << std::endl;
     }
 }

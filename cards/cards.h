@@ -20,7 +20,7 @@ struct cardEffect{
     int type;
     int value = 0;
     int chanceToHit = 100;
-    bool target = false;
+    bool target = true;
 };
 
 struct card{
