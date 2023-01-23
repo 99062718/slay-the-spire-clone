@@ -11,7 +11,19 @@ std::uniform_int_distribution<> hitChanceDistrubution(1, 100);
 auto hitChance = std::bind(hitChanceDistrubution, hitChanceGen);
 
 std::array<int, 2> getAOIsize(int AOIeffect, int id, std::array<int, 2> teamSize){
-    return {(AOIeffect == 0) ? teamSize[0] : id + teamSize[0], (AOIeffect == 2) ? id + teamSize[0] : teamSize[1]};
+    switch (AOIeffect){
+        case 0:
+            return teamSize;
+            break;
+        case 1:
+            return {id, teamSize[1]};
+            break;
+        case 2:
+            return {id, id};
+            break;
+        default:
+            throw std::invalid_argument("AOIeffect of " + std::to_string(AOIeffect) + " is not possible");
+    }
 }
 
 std::array<int, 2> getTargetTeam(int id, bool target){
@@ -23,8 +35,9 @@ std::array<int, 2> getTargetTeam(int id, bool target){
 void activateCard(int userId, card& currentCard, cardEffect& currentEffect, int teamId, std::array<int, 2> loopSize, battle& currentBattle){
     if (currentEffect.chanceToHit >= hitChance()){
         std::array<int, 2> AOIsize = getAOIsize(currentEffect.AOIeffect, teamId, loopSize);
+        int loopNum = AOIsize[0];
 
-        for (int loopNum = AOIsize[0]; loopNum < AOIsize[1]; loopNum++){
+        do{
             if (currentBattle.combatants[loopNum] != nullptr){
                 if (currentEffect.ignoreDeath){
                     switch (currentEffect.type){
@@ -41,7 +54,8 @@ void activateCard(int userId, card& currentCard, cardEffect& currentEffect, int 
                     }
                 }
             }
-        }
+            loopNum++;
+        } while (loopNum < AOIsize[1]);
     } else {
         std::cout << currentCard.name << "'s " << cardTypeNames[currentEffect.type] << " has failed!" << std::endl;
     }
