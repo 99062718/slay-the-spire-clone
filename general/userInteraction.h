@@ -23,13 +23,28 @@ int playerChoiceVector(std::vector<std::string>& choiceList){
     return chosen;
 }
 
-int playerChoiceArray(std::string choiceList[], int start, int end){
+int entityChoiceList(battle& battleInstance, int start, int end, int displayMode){
     int chosen = 0;
     int num = 0;
+    std::vector<int> entityPositions = {};
 
     for(int x = start; x < end; x++){
-        if (choiceList[x] != ""){
-            std::cout << num + 1 << ") " << choiceList[x] << std::endl;
+        std::string currentName = battleInstance.entityNames[x];
+        if (currentName != ""){
+            switch (displayMode){
+                case 0:
+                    if (battleInstance.combatants[x]->getHealth() <= 0) continue;
+                    break;
+                case 1:
+                    if (battleInstance.combatants[x]->getHealth() > 0) continue;
+                    break;
+                case 2:
+                    break;
+                default:
+                    throw std::invalid_argument("displayMode of " + std::to_string(displayMode) + " is not possible");
+            }
+            std::cout << num + 1 << ") " << currentName << std::endl;
+            entityPositions.push_back(num);
             num++;
         }
     }
@@ -37,10 +52,10 @@ int playerChoiceArray(std::string choiceList[], int start, int end){
     std::cin >> chosen;
     chosen -= 1;
 
-    if(chosen < 0 || chosen >= end){
+    if(chosen < 0 || chosen >= num){
         std::cout << chosen << " is not a valid choice";
-        chosen = playerChoiceArray(choiceList, end, start);
+        chosen = entityChoiceList(battleInstance, end, start, displayMode);
     }
 
-    return chosen;
+    return entityPositions[chosen];
 }

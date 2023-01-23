@@ -11,6 +11,7 @@ struct entityData{
     int strength = 0;
 };
 
-const entityData allMonsters[1] = {
-    {"Skeleton", "The skeleton appears", 20, 3, {common[1]}}
+const entityData allMonsters[2] = {
+    {"Skeleton", "The skeleton appears", 20, 3, {common[1]}},
+    {"The unfortunate one", "It was dead on arrival", 0, 0, {}}
 };

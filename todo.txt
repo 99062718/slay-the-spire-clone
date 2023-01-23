@@ -16,11 +16,10 @@ difficulty system:
 - difficulty scales with rooms scaled
 - some room themes will be harder on average than the other
 story/endless mode:
-- players can choose between playing the story mode (which has an ending and a final boss) or the endless mode (which i dont think i hate to explain)
+- players can choose between playing the story mode (which has an ending and a final boss) or the endless mode (which i dont think i need to explain)
 player:
 - player will die once health reaches 0 :D
-- cards power will scale with player level
+- cards power will scale with player level (or maybe cards could be upgraded?)
+- players with different playstyles?
 stats:
 - add defense and attack multiplier for scaling and different enemies
-
-very much subject to change as this list was made before i, very ironically, hadnt played slay the spire yet.

@@ -14,6 +14,11 @@ AOI effect modes corrosponding to their number:
     0: all,
     1: row,
     2: single
+
+Display modes corrosponding to their number:
+    0: only show alive,
+    1: only show dead,
+    2: show all
 */
 
 extern std::string cardTypeNames[5];
@@ -24,7 +29,7 @@ struct cardEffect{
     int value = 0;
     int chanceToHit = 100;
     bool target = true;
-    bool ignoreDeath = false;
+    int displayMode = 0;
 };
 
 struct card{
