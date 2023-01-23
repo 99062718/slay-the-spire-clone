@@ -16,7 +16,7 @@ AOI effect modes corrosponding to their number:
     2: single
 */
 
-extern std::string cardTypeNames[2];
+extern std::string cardTypeNames[5];
 
 struct cardEffect{
     int AOIeffect;
