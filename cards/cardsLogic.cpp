@@ -43,7 +43,7 @@ void activateCard(int userId, card& currentCard, cardEffect& currentEffect, int 
                     switch (currentEffect.type){
                         // should have card effects that get played regardless of if entity is alive or not.
                         case 6:
-                            currentBattle.combatants[loopNum]->heal(currentBattle.combatants[loopNum]->getMaxHealth() * (currentEffect.value / 100));
+                            currentBattle.combatants[loopNum]->upStat(currentBattle.combatants[loopNum]->ch_health, currentBattle.combatants[loopNum]->getMaxHealth() * (currentEffect.value / 100), currentBattle.combatants[loopNum]->getMaxHealth());
                             break;
                         default:
                             throw std::invalid_argument("cardEffect type of " + std::to_string(currentEffect.type) + " is not possible");
@@ -51,25 +51,25 @@ void activateCard(int userId, card& currentCard, cardEffect& currentEffect, int 
                     }
                 }
                 
-                if (currentBattle.combatants[loopNum]->getHealth() != 0 || currentEffect.displayMode == 2){
+                if (currentBattle.combatants[loopNum]->ch_health != 0 || currentEffect.displayMode == 2){
                     switch (currentEffect.type){
                         case 0: 
                             currentBattle.combatants[loopNum]->takeDamage(currentEffect.value);
                             break;
                         case 1:
-                            currentBattle.combatants[loopNum]->heal(currentEffect.value);
+                            currentBattle.combatants[loopNum]->upStat(currentBattle.combatants[loopNum]->ch_health, currentEffect.value, currentBattle.combatants[loopNum]->getMaxHealth());
                             break;
                         case 2:
-                            currentBattle.combatants[loopNum]->upBlock(currentEffect.value);
+                            currentBattle.combatants[loopNum]->upStat(currentBattle.combatants[loopNum]->ch_block, currentEffect.value);
                             break;
                         case 3:
-                            currentBattle.combatants[loopNum]->downBlock(currentEffect.value);
+                            currentBattle.combatants[loopNum]->downStat(currentBattle.combatants[loopNum]->ch_block, currentEffect.value, 0);
                             break;
                         case 4:
-                            currentBattle.combatants[loopNum]->upStrength(currentEffect.value);
+                            currentBattle.combatants[loopNum]->upStat(currentBattle.combatants[loopNum]->ch_strength, currentEffect.value);
                             break;
                         case 5:
-                            currentBattle.combatants[loopNum]->downStrength(currentEffect.value);
+                            currentBattle.combatants[loopNum]->downStat(currentBattle.combatants[loopNum]->ch_strength, currentEffect.value);
                             break;
                         default:
                             throw std::invalid_argument("cardEffect type of " + std::to_string(currentEffect.type) + " is not possible");

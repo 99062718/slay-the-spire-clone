@@ -9,23 +9,17 @@ class entity{
 protected:
     const std::string ch_type;
     std::vector<card> ch_cards;
-    int ch_health, ch_maxHealth, ch_mana, ch_block, ch_strength;
-    int ch_entityId;
+    int ch_entityId, ch_maxHealth;
 public:    
+    int ch_health, ch_mana, ch_block, ch_strength;
+
     entity(entityData& data, int entityId);
 
-    void upBlock(int block);
-    void downBlock(int block);
-
+    void upStat(int& stat, int value, int max = 99999);
+    void downStat(int& stat, int value, int min = -99999);
     void takeDamage(int dmg, bool ignoreBlock = false);
 
-    void heal(int toHeal);
-
-    void upStrength(int strength);
-    void downStrength(int strength);
-
     std::string giveName() const;
-    int getHealth() const;
     int getMaxHealth() const;
     std::vector<std::string> giveCardNames() const;
 

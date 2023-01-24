@@ -33,10 +33,10 @@ int entityChoiceList(battle& battleInstance, int start, int end, int displayMode
         if (currentName != ""){
             switch (displayMode){
                 case 0:
-                    if (battleInstance.combatants[x]->getHealth() <= 0) continue;
+                    if (battleInstance.combatants[x]->ch_health <= 0) continue;
                     break;
                 case 1:
-                    if (battleInstance.combatants[x]->getHealth() > 0) continue;
+                    if (battleInstance.combatants[x]->ch_health > 0) continue;
                     break;
                 case 2:
                     break;
