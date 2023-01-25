@@ -4,20 +4,23 @@
 
 //this code can most likely be shortened. should look into that later
 
-int playerChoiceVector(std::vector<std::string>& choiceList){
+int playerChoiceVector(std::vector<std::string>& choiceList, std::string startingMessage = "", int start = 0){
     int chosen;
     int listSize = choiceList.size();
+    int num = start;
 
-    for(int num = 0; num < listSize; num++){
+    if (startingMessage != "") std::cout << num + 1 << ") " << startingMessage << std::endl;
+
+    for(int num = num; num < listSize; num++){
         std::cout << num + 1 << ") " << choiceList[num] << std::endl;
     }
 
     std::cin >> chosen;
     chosen -= 1;
 
-    if(chosen < 0 || chosen >= listSize){
+    if(chosen < start || chosen >= listSize){
         std::cout << chosen << " is not a valid choice";
-        chosen = playerChoiceVector(choiceList);
+        chosen = playerChoiceVector(choiceList, startingMessage, start);
     }
 
     return chosen;

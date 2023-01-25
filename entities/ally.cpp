@@ -15,7 +15,9 @@ void ally::ai(battle& battleInstance, int listSize){
     std::cout << ch_type << "'s turn" << std::endl;
     
     while (true){
-        int chosenCard = playerChoiceVector(cardNames);
+        int chosenCard = playerChoiceVector(cardNames, "end turn", -1);
+
+        if (chosenCard == -1) break;
 
         if (ch_cards[chosenCard].manaCost > currentMana){
             std::cout << ch_cards[chosenCard].name << " costs more mana than you have!" << std::endl;
