@@ -5,7 +5,7 @@
 #include <functional>
 #include <iostream>
 
-std::string cardTypeNames[7] = {"attack", "heal", "block", "fragile", "strength", "weak", "revive"};
+std::string cardTypeNames[8] = {"attack", "heal", "block", "fragile", "strength", "weak", "revive", "mana increase"};
 std::default_random_engine hitChanceGen;
 std::uniform_int_distribution<> hitChanceDistrubution(1, 100);
 auto hitChance = std::bind(hitChanceDistrubution, hitChanceGen);
@@ -73,6 +73,9 @@ void activateCard(int userId, card& currentCard, cardEffect& currentEffect, int 
                             break;
                         case 5:
                             currentCombatant->downStat(currentCombatant->ch_strength, currentEffect.value);
+                            break;
+                        case 7:
+                            currentCombatant->upStat(currentCombatant->ch_startingMana, currentEffect.value);
                             break;
                         default:
                             throw std::invalid_argument("cardEffect type of " + std::to_string(currentEffect.type) + " is not possible");

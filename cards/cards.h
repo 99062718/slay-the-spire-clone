@@ -10,7 +10,8 @@ Card effects corrosponding to their number:
     3: fragile,
     4: strength,
     5: weak,
-    6: revive
+    6: revive,
+    7: mana increase
 
 AOI effect modes corrosponding to their number:
     0: all,
@@ -23,7 +24,7 @@ Display modes corrosponding to their number:
     2: show all
 */
 
-extern std::string cardTypeNames[7];
+extern std::string cardTypeNames[8];
 
 struct cardEffect{
     int AOIeffect;
@@ -38,6 +39,7 @@ struct card{ // add mana cost
     std::string name;
     std::string rarity;
     std::vector<cardEffect> effects;
+    int manaCost = 0;
 };
 
 const card common[3] = {
