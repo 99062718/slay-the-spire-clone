@@ -19,7 +19,8 @@ public:
     void upAlive(int id);
     void downAlive(int id);
 
+    void initBattle();
     void initTurn(int id);
 
-    void battleLoop();
+    bool battleLoop();
 };

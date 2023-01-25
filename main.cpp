@@ -3,7 +3,8 @@
 #include <iostream>
 
 int main(){
-    battle test({allMonsters[0], allMonsters[1]}, {{"test", "", 10, 1, {common[1]}, 0, 0}});
+    battle test({allMonsters[0]}, {{"test", "", 10, 1, {common[1]}, 0, 0}});
+    test.initBattle();
 
     return 0;
 }
