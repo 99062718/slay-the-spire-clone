@@ -9,10 +9,10 @@ const int entityListSize = 20;
 const int halfListSize = entityListSize/2;
 
 class battle{
-    std::array<int, 2> amountAlive = {0, 0};
 public:
     entity* combatants[entityListSize];
     std::string entityNames[entityListSize];
+    std::array<int, 2> amountAlive = {0, 0};
 
     battle(std::vector<entityData> enemies, std::vector<entityData> allies);
 

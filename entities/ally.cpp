@@ -15,6 +15,8 @@ void ally::ai(battle& battleInstance, int listSize){
     std::cout << ch_type << "'s turn" << std::endl;
     
     while (true){
+        if (battleInstance.amountAlive[1] == 0) return;
+
         std::cout << "current mana : " << currentMana << std::endl;
 
         int chosenCard = playerChoiceVector(cardNames, "end turn", -1);
@@ -29,9 +31,11 @@ void ally::ai(battle& battleInstance, int listSize){
         currentMana -= ch_cards[chosenCard].manaCost;
 
         for (cardEffect currentEffect : ch_cards[chosenCard].effects){
+            if (battleInstance.amountAlive[1] == 0) return;
+
             std::array<int, 2> loopSize = getTargetTeam(ch_entityId, currentEffect.target);
 
-            int chosenEntity = entityChoiceList(battleInstance, loopSize[0], loopSize[1], currentEffect.displayMode); // need to make sure battle stops here if no entities are printed.
+            int chosenEntity = entityChoiceList(battleInstance, loopSize[0], loopSize[1], currentEffect.displayMode); 
 
             activateCard(ch_entityId, ch_cards[chosenCard], currentEffect, chosenEntity, loopSize, battleInstance);
         }
