@@ -1,7 +1,7 @@
 #include "battle.h"
 #include <iostream>
 
-battle::battle(std::vector<entityData> enemies, std::vector<entityData> allies)
+battle::battle(std::vector<entityData> enemies, std::vector<entityData> allies) // current adds entities to amountAlive regardless of if their health is 0 or not. change that if you want undead enemies.
     : combatants(){
     for (int loopNum = 0; loopNum < allies.size(); loopNum++){
         entityData currentAlly = allies[loopNum];
@@ -33,7 +33,7 @@ void battle::initBattle(){
     exit(1);
 }
 
-void battle::initTurn(int id){
+void battle::initTurn(int id){ // maybe add enemies that can attack at 0 health like some kind of undead. you would need to kill everything else in the room for it to die.
     if (combatants[id] != nullptr && combatants[id]->ch_health > 0) combatants[id]->ai(*this, entityListSize);
 }
 

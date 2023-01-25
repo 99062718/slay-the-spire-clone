@@ -5,7 +5,7 @@ struct entityData{ // some kind of xp on defeat?
     std::string type;
     std::string desc;
     int health;
-    int mana;
+    int startingMana;
     std::vector<card> cards;
     int block = 0;
     int strength = 0;

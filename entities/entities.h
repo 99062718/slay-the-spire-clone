@@ -11,7 +11,7 @@ protected: // add speed, level, xp?
     std::vector<card> ch_cards;
     int ch_entityId, ch_maxHealth;
 public:    
-    int ch_health, ch_mana, ch_block, ch_strength;
+    int ch_health, ch_startingMana, ch_block, ch_strength;
 
     entity(entityData& data, int entityId);
 
