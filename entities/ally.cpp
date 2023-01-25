@@ -15,6 +15,8 @@ void ally::ai(battle& battleInstance, int listSize){
     std::cout << ch_type << "'s turn" << std::endl;
     
     while (true){
+        std::cout << "current mana : " << currentMana << std::endl;
+
         int chosenCard = playerChoiceVector(cardNames, "end turn", -1);
 
         if (chosenCard == -1) break;
