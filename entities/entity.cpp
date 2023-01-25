@@ -23,7 +23,7 @@ std::vector<std::string> entity::giveCardNames() const{
     std::vector<std::string> cardNames;
         
     for(int x = 0; x < ch_cards.size(); x++){
-        cardNames.push_back(ch_cards[x].name);
+        cardNames.push_back(ch_cards[x].name + " - cost: " + std::to_string(ch_cards[x].manaCost));
     }
 
     return cardNames;
