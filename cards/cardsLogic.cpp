@@ -38,13 +38,14 @@ void activateCard(int userId, card& currentCard, cardEffect& currentEffect, int 
         int loopNum = AOIsize[0];
 
         do{
-            if (currentBattle.combatants[loopNum] != nullptr){
+            if (currentBattle.combatants[loopNum] != nullptr){ // add card for summoning entities?
                 entity* currentCombatant = currentBattle.combatants[loopNum];
                 if (currentEffect.displayMode == 1 || currentEffect.displayMode == 2){
                     switch (currentEffect.type){
                         // should have card effects that get played regardless of if entity is alive or not.
                         case 6:
                             currentCombatant->upStat(currentCombatant->ch_health, currentCombatant->getMaxHealth() * (currentEffect.value / 100), currentCombatant->getMaxHealth());
+                            currentBattle.upAlive(teamId);
                             break;
                         default:
                             throw std::invalid_argument("cardEffect type of " + std::to_string(currentEffect.type) + " is not possible");
@@ -56,6 +57,7 @@ void activateCard(int userId, card& currentCard, cardEffect& currentEffect, int 
                     switch (currentEffect.type){
                         case 0: 
                             currentCombatant->takeDamage(currentEffect.value);
+                            if (currentCombatant->ch_health == 0) currentBattle.downAlive(loopNum);
                             break;
                         case 1:
                             currentCombatant->upStat(currentCombatant->ch_health, currentEffect.value, currentCombatant->getMaxHealth());

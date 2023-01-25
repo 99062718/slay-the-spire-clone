@@ -8,7 +8,9 @@ Card effects corrosponding to their number:
     1: heal,
     2: block,
     3: fragile,
-    4: strength
+    4: strength,
+    5: weak,
+    6: revive
 
 AOI effect modes corrosponding to their number:
     0: all,
@@ -32,7 +34,7 @@ struct cardEffect{
     int displayMode = 0;
 };
 
-struct card{
+struct card{ // add mana cost
     std::string name;
     std::string rarity;
     std::vector<cardEffect> effects;

@@ -6,7 +6,7 @@
 
 class battle;
 class entity{
-protected:
+protected: // add speed, level, xp?
     const std::string ch_type;
     std::vector<card> ch_cards;
     int ch_entityId, ch_maxHealth;

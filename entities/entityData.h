@@ -1,7 +1,7 @@
 #pragma once
 #include "../cards/cards.h"
 
-struct entityData{
+struct entityData{ // some kind of xp on defeat?
     std::string type;
     std::string desc;
     int health;
