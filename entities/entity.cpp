@@ -19,7 +19,7 @@ void entity::takeDamage(int dmg, bool ignoreBlock){
 std::string entity::giveName() const {return ch_type;}
 int entity::getMaxHealth() const {return ch_maxHealth;}
 
-std::vector<std::string> entity::giveCardNames() const{
+std::vector<std::string> entity::giveCardNames(std::vector<card> cardList) const{
     std::vector<std::string> cardNames;
         
     for(int x = 0; x < ch_cards.size(); x++){

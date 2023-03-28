@@ -18,7 +18,6 @@ difficulty system:
 story/endless mode:
 - players can choose between playing the story mode (which has an ending and a final boss) or the endless mode (which i dont think i need to explain)
 player:
-- player will die once health reaches 0 :D
 - cards could be upgraded?
 - players with different playstyles?
 stats:
