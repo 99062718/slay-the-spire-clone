@@ -10,7 +10,7 @@ ally::ally(entityData& data, int entityId)
 
 void ally::ai(battle& battleInstance, int listSize){
     int currentMana = ch_startingMana;
-    std::vector<std::string> cardNames = giveCardNames();
+    std::vector<std::string> cardNames = giveCardNames(ch_cards);
         
     std::cout << ch_type << "'s turn" << std::endl;
     
@@ -23,14 +23,14 @@ void ally::ai(battle& battleInstance, int listSize){
 
         if (chosenCard == -1) break;
 
-        if (ch_cards[chosenCard].manaCost > currentMana){
-            std::cout << ch_cards[chosenCard].name << " costs more mana than you have!" << std::endl;
+        if ((*ch_cards[chosenCard]).manaCost > currentMana){
+            std::cout << (*ch_cards[chosenCard]).name << " costs more mana than you have!" << std::endl;
             continue;
         }
 
-        currentMana -= ch_cards[chosenCard].manaCost;
+        currentMana -= (*ch_cards[chosenCard]).manaCost;
 
-        for (cardEffect currentEffect : ch_cards[chosenCard].effects){
+        for (cardEffect currentEffect : (*ch_cards[chosenCard]).effects){
             if (battleInstance.amountAlive[1] == 0) return;
 
             std::array<int, 2> loopSize = getTargetTeam(ch_entityId, currentEffect.target);

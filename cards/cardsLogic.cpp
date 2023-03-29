@@ -32,7 +32,7 @@ std::array<int, 2> getTargetTeam(int id, bool target){
     return {(target == 0) ? 0 : 10, (target == 0) ? 10 : 20};
 }
 
-void activateCard(int userId, card& currentCard, cardEffect& currentEffect, int teamId, std::array<int, 2> loopSize, battle& currentBattle){
+void activateCard(int userId, const card *currentCard, cardEffect& currentEffect, int teamId, std::array<int, 2> loopSize, battle& currentBattle){
     if (currentEffect.chanceToHit >= hitChance()){
         std::array<int, 2> AOIsize = getAOIsize(currentEffect.AOIeffect, teamId, loopSize);
         int loopNum = AOIsize[0];
@@ -86,6 +86,6 @@ void activateCard(int userId, card& currentCard, cardEffect& currentEffect, int 
             loopNum++;
         } while (loopNum < AOIsize[1]);
     } else {
-        std::cout << currentCard.name << "'s " << cardTypeNames[currentEffect.type] << " has failed!" << std::endl;
+        std::cout << (*currentCard).name << "'s " << cardTypeNames[currentEffect.type] << " has failed!" << std::endl;
     }
 }

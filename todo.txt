@@ -2,6 +2,7 @@ item system:
 - add more items to common / uncommon
 - allow for more types of cards like lifesteal, reshuffle deck, find card in deck, ect
 - add and remove items when used
+- make hands draws randomised instead of set
 room system:
 - every room the player gets the choice between multiple what room theyre moving to next
 - these doors to the next rooms all have a preview of what is to come (the theme of the room, shop or not, guarenteed item, ect)

@@ -19,12 +19,21 @@ void entity::takeDamage(int dmg, bool ignoreBlock){
 std::string entity::giveName() const {return ch_type;}
 int entity::getMaxHealth() const {return ch_maxHealth;}
 
-std::vector<std::string> entity::giveCardNames(std::vector<card> cardList) const{
+std::vector<std::string> entity::giveCardNames(std::vector<const card*> &cardList) const{
     std::vector<std::string> cardNames;
+    cardNames.reserve(cardList.size());
         
-    for(int x = 0; x < ch_cards.size(); x++){
-        cardNames.push_back(ch_cards[x].name + " - cost: " + std::to_string(ch_cards[x].manaCost));
+    for(int x = 0; x < cardList.size(); x++){
+        cardNames.push_back((*cardList[x]).name + " - cost: " + std::to_string((*cardList[x]).manaCost));
     }
 
     return cardNames;
+}
+
+void entity::addToHand(int amount){
+    ch_hand.reserve(amount);
+
+    for (int x = 0; x < amount; x++) {
+        ch_hand.emplace_back();
+    }
 }
