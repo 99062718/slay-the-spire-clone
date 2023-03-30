@@ -27,6 +27,7 @@ public:
     virtual void ai(battle& battleInstance, int listSize) = 0;
 
     void addToHand(int amount);
+    void resetHand();
 };
 
 class enemy : public entity{

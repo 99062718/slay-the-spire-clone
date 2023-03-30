@@ -24,7 +24,7 @@ std::vector<std::string> entity::giveCardNames(std::vector<const card*> &cardLis
     cardNames.reserve(cardList.size());
         
     for(int x = 0; x < cardList.size(); x++){
-        cardNames.push_back((*cardList[x]).name + " - cost: " + std::to_string((*cardList[x]).manaCost));
+        cardNames.emplace_back((*cardList[x]).name + " - cost: " + std::to_string((*cardList[x]).manaCost));
     }
 
     return cardNames;
@@ -34,6 +34,12 @@ void entity::addToHand(int amount){
     ch_hand.reserve(amount);
 
     for (int x = 0; x < amount; x++) {
-        ch_hand.emplace_back();
+        ch_hand.emplace_back(ch_cards[ch_currentInDeck]);
+        ch_currentInDeck = (ch_currentInDeck == ch_cards.size()) ? 0 : ch_currentInDeck++;
     }
+}
+
+void entity::resetHand(){
+    ch_hand = std::vector<const card*>();
+    addToHand(3);
 }

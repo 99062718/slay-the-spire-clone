@@ -5,4 +5,7 @@
 enemy::enemy(entityData& data, int entityId)
     : entity(data, entityId){}
 
-void enemy::ai(battle& battleInstance, int listSize){std::cout << "goodbye goodbye" << std::endl;} // maybe some kind of lookup system that does ai based on entities type?
+void enemy::ai(battle& battleInstance, int listSize){
+    std::cout << "goodbye goodbye" << std::endl;
+    resetHand();
+} // maybe some kind of lookup system that does ai based on entities type?
