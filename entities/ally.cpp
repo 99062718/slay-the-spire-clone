@@ -11,13 +11,13 @@ ally::ally(entityData& data, int entityId)
 void ally::ai(battle& battleInstance, int listSize){
     resetHand();
     int currentMana = ch_startingMana;
+
+    std::vector<std::string> cardNames = giveCardNames(ch_hand);
         
     std::cout << ch_type << "'s turn" << std::endl;
     
     while (true){
         if (battleInstance.amountAlive[1] == 0) return;
-
-        std::vector<std::string> cardNames = giveCardNames(ch_hand);
 
         std::cout << "current mana : " << currentMana << std::endl;
 
@@ -41,5 +41,8 @@ void ally::ai(battle& battleInstance, int listSize){
 
             activateCard(ch_entityId, ch_hand[chosenCard], currentEffect, chosenEntity, loopSize, battleInstance);
         }
+
+        ch_hand.erase(ch_hand.begin()+chosenCard);
+        cardNames.erase(cardNames.begin()+chosenCard);
     }
 }
