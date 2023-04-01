@@ -11,7 +11,10 @@ Card effects corrosponding to their number:
     4: strength,
     5: weak,
     6: revive,
-    7: mana increase
+    7: mana increase,
+    8: draw card,
+    9: draw more cards next turn,
+    10: draw less cards next turn
 
 AOI effect modes corrosponding to their number:
     0: all,
@@ -21,7 +24,8 @@ AOI effect modes corrosponding to their number:
 Display modes corrosponding to their number:
     0: only show alive,
     1: only show dead,
-    2: show all
+    2: show all,
+    3: self
 */
 
 extern std::string cardTypeNames[8];
@@ -44,7 +48,7 @@ struct card{ // add mana cost
 
 const card common[3] = {
     {"Sword slash", "common", {{2, 0, 5}}},
-    {"Jump kick", "common", {{2, 0, 2}}},
+    {"Jump kick", "common", {{2, 0, 2, 100, true, 3}}},
     {"Chin punch", "common", {{2, 0, 3}}}
 };
 

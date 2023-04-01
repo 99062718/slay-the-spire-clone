@@ -77,6 +77,15 @@ void activateCard(int userId, const card *currentCard, cardEffect& currentEffect
                         case 7:
                             currentCombatant->upStat(currentCombatant->ch_startingMana, currentEffect.value);
                             break;
+                        case 8:
+                            currentCombatant->addToHand(currentEffect.value);
+                            break;
+                        case 9:
+                            currentCombatant->upStat(currentCombatant->ch_drawAmount, currentEffect.value);
+                            break;
+                        case 10:
+                            currentCombatant->downStat(currentCombatant->ch_drawAmount, currentEffect.value);
+                            break;
                         default:
                             throw std::invalid_argument("cardEffect type of " + std::to_string(currentEffect.type) + " is not possible");
                             break;

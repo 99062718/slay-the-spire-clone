@@ -2,7 +2,7 @@
 #include "../general/battle.h"
 
 entity::entity(entityData& data, int entityId)
-    : ch_type(data.type), ch_cards(data.cards), ch_health(data.health), ch_startingMana(data.startingMana), ch_block(data.block), ch_strength(data.strength), ch_drawDefault(ch_drawDefault), ch_entityId(entityId){
+    : ch_type(data.type), ch_cards(data.cards), ch_health(data.health), ch_startingMana(data.startingMana), ch_block(data.block), ch_strength(data.strength), ch_drawDefault(data.drawDefault), ch_entityId(entityId){
         ch_maxHealth = ch_health;
         ch_drawAmount = ch_drawDefault;
     }
@@ -45,4 +45,5 @@ void entity::addToHand(int amount){
 void entity::resetHand(){
     ch_hand = std::vector<const card*>();
     addToHand(ch_drawAmount);
+    ch_drawAmount = ch_drawDefault;
 }

@@ -10,7 +10,6 @@ ally::ally(entityData& data, int entityId)
 
 void ally::ai(battle& battleInstance, int listSize){
     resetHand();
-    ch_drawAmount = ch_drawDefault;
     int currentMana = ch_startingMana;
 
     std::vector<std::string> cardNames = giveCardNames(ch_hand);
@@ -35,6 +34,11 @@ void ally::ai(battle& battleInstance, int listSize){
 
         for (cardEffect currentEffect : (*ch_hand[chosenCard]).effects){
             if (battleInstance.amountAlive[1] == 0) return;
+
+            if (currentEffect.displayMode == 3){
+                activateCard(ch_entityId, ch_hand[chosenCard], currentEffect, ch_entityId, std::array<int, 2>({0, 0}), battleInstance);
+                continue;
+            }
 
             std::array<int, 2> loopSize = getTargetTeam(ch_entityId, currentEffect.target);
 
