@@ -9,10 +9,10 @@ class entity{
 protected: // add speed, level, xp?
     const std::string ch_type;
     std::vector<const card*> ch_cards, ch_hand;
-    int ch_entityId, ch_maxHealth;
+    int ch_entityId, ch_maxHealth, ch_drawDefault;
     int ch_currentInDeck = 0;
 public:    
-    int ch_health, ch_startingMana, ch_block, ch_strength;
+    int ch_health, ch_startingMana, ch_block, ch_strength, ch_drawAmount;
 
     entity(entityData& data, int entityId);
 

@@ -9,6 +9,7 @@ struct entityData{ // some kind of xp on defeat?
     std::vector<const card*> cards;
     int block = 0;
     int strength = 0;
+    int drawDefault = 3;
 };
 
 const entityData allMonsters[2] = {

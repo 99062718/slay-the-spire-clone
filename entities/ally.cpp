@@ -10,6 +10,7 @@ ally::ally(entityData& data, int entityId)
 
 void ally::ai(battle& battleInstance, int listSize){
     resetHand();
+    ch_drawAmount = ch_drawDefault;
     int currentMana = ch_startingMana;
 
     std::vector<std::string> cardNames = giveCardNames(ch_hand);
